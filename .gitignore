@@ -2,3 +2,7 @@
 *.fasta
 *.bz2
 *.zip
+*.original_safe_id
+*.tfa
+*.out
+*.aln
