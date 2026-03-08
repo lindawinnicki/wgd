@@ -220,25 +220,25 @@ nohup wgd ksd ../DMD/Auri_dmd/auri.fasta.tsv ../../Data/Aurde1/auri.fasta -o Aur
 # dmd
 # for prot just add --prot
 nohup wgd dmd \\
-Data/Aurde1/Aurde1_all_CDS_20110213.fasta \\ 
+Data/Aurde1/Data/Aurde1/Aurde1_GeneCatalog_CDS_20110213.fasta \\ 
 -o Results/CDS_DMD/Auri/ \\
 -n 10 > Results/CDS_DMD/Auri/aurdi.out 2>&1 &
 
 nohup wgd dmd \\
-Data/Exigl1/Exigl1_all_CDS_20130529.fasta \\
+Data/Exigl1/Exigl1_GeneCatalog_CDS_20130529.fasta \\
 -o Results/CDS_DMD/Exig \\
 -n 10 > Results/CDS_DMD/Exig/exig.out 2>&1 &
 
 # ksd
 nohup wgd ksd \\
-Results/CDS_DMD/Auri/Aurde1_all_CDS_20110213.fasta.tsv \\
-Data/Aurde1/Aurde1_all_CDS_20110213.fasta \\
+Results/CDS_DMD/Auri/Aurde1_GeneCatalog_CDS_20110213.fasta.tsv \\
+Data/Aurde1/Aurde1_GeneCatalog_CDS_20110213.fasta \\
 -o Results/CDS_KSD/Auri/ \\
--n 15 > Results/CDS_KSD/Auri/auri_ksd.out 2>&1 
+-n 15 > Results/CDS_KSD/Auri/auri_ksd.out 2>&1 &
 
 nohup wgd ksd \\
-Results/CDS_DMD/Exig/Exigl1_all_CDS_20130529.fasta.tsv \\
-Data/Exigl1/Exigl1_all_CDS_20130529.fasta \\
+Results/CDS_DMD/Exig/Exigl1_GeneCatalog_CDS_20130529.fasta.tsv \\
+Data/Exigl1/Exigl1_GeneCatalog_CDS_20130529.fasta \\
 -o Results/CDS_KSD/Exig/ \\
 -n 15 > Results/CDS_KSD/Exig/exig_ksd.out 2>&1 &
 
