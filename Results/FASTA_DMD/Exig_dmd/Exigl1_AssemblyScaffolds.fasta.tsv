@@ -1,0 +1,520 @@
+	Exigl1_AssemblyScaffolds.fasta
+GF00000001	scaffold_20, scaffold_167, scaffold_315, scaffold_357, scaffold_343, scaffold_426, scaffold_451, scaffold_604, scaffold_784, scaffold_732, scaffold_860, scaffold_800, scaffold_852, scaffold_920, scaffold_782, scaffold_1152, scaffold_1488, scaffold_1651, scaffold_1144, scaffold_1207, scaffold_1624, scaffold_1630
+GF00000002	scaffold_2, scaffold_53, scaffold_335, scaffold_416, scaffold_564, scaffold_629, scaffold_636, scaffold_724, scaffold_762, scaffold_853, scaffold_1044, scaffold_1125, scaffold_1179, scaffold_1196, scaffold_1223, scaffold_1256, scaffold_1293, scaffold_1619, scaffold_1685, scaffold_1294, scaffold_1234
+GF00000003	scaffold_179, scaffold_274, scaffold_611, scaffold_208, scaffold_522, scaffold_302, scaffold_469, scaffold_314, scaffold_339, scaffold_300, scaffold_297, scaffold_465, scaffold_331, scaffold_363, scaffold_835, scaffold_1066, scaffold_983, scaffold_1030, scaffold_836, scaffold_1147, scaffold_1720
+GF00000004	scaffold_12, scaffold_364, scaffold_51, scaffold_211, scaffold_275, scaffold_590, scaffold_493, scaffold_548, scaffold_825, scaffold_987, scaffold_765, scaffold_828, scaffold_856, scaffold_1112, scaffold_1194, scaffold_1259, scaffold_1037, scaffold_1153, scaffold_1435, scaffold_1067
+GF00000005	scaffold_23, scaffold_113, scaffold_134, scaffold_381, scaffold_201, scaffold_658, scaffold_538, scaffold_855, scaffold_1089, scaffold_1156, scaffold_1193, scaffold_1325, scaffold_1319, scaffold_1545, scaffold_1524, scaffold_1154, scaffold_1267, scaffold_1615, scaffold_1424
+GF00000006	scaffold_4, scaffold_30, scaffold_68, scaffold_56, scaffold_45, scaffold_526, scaffold_717, scaffold_533, scaffold_866, scaffold_639, scaffold_981, scaffold_1015, scaffold_1053, scaffold_930, scaffold_1235, scaffold_1240, scaffold_1658, scaffold_1346
+GF00000007	scaffold_17, scaffold_431, scaffold_189, scaffold_142, scaffold_109, scaffold_89, scaffold_194, scaffold_433, scaffold_394, scaffold_329, scaffold_530, scaffold_597, scaffold_971, scaffold_944, scaffold_1210, scaffold_1648, scaffold_1182
+GF00000008	scaffold_99, scaffold_437, scaffold_450, scaffold_910, scaffold_701, scaffold_662, scaffold_900, scaffold_819, scaffold_848, scaffold_917, scaffold_781, scaffold_922, scaffold_1032, scaffold_1170, scaffold_1254, scaffold_1272
+GF00000009	scaffold_139, scaffold_11, scaffold_516, scaffold_707, scaffold_467, scaffold_595, scaffold_626, scaffold_729, scaffold_749, scaffold_1284, scaffold_1451, scaffold_1627, scaffold_1612
+GF00000010	scaffold_15, scaffold_95, scaffold_262, scaffold_334, scaffold_370, scaffold_568, scaffold_566, scaffold_999, scaffold_1075, scaffold_934, scaffold_1183, scaffold_1276, scaffold_1577
+GF00000011	scaffold_105, scaffold_138, scaffold_366, scaffold_746, scaffold_470, scaffold_712, scaffold_935, scaffold_921, scaffold_1069, scaffold_1200, scaffold_1073, scaffold_1199, scaffold_1201
+GF00000012	scaffold_9, scaffold_133, scaffold_202, scaffold_646, scaffold_608, scaffold_829, scaffold_632, scaffold_1035, scaffold_940, scaffold_1227, scaffold_958, scaffold_1354
+GF00000013	scaffold_16, scaffold_485, scaffold_146, scaffold_598, scaffold_289, scaffold_245, scaffold_358, scaffold_514, scaffold_588, scaffold_955, scaffold_1093, scaffold_773
+GF00000014	scaffold_6, scaffold_82, scaffold_190, scaffold_428, scaffold_410, scaffold_686, scaffold_846, scaffold_882, scaffold_1083, scaffold_1386, scaffold_1542, scaffold_1675
+GF00000015	scaffold_25, scaffold_249, scaffold_306, scaffold_563, scaffold_572, scaffold_527, scaffold_659, scaffold_937, scaffold_807, scaffold_976, scaffold_1620, scaffold_1551
+GF00000016	scaffold_28, scaffold_71, scaffold_69, scaffold_444, scaffold_496, scaffold_579, scaffold_645, scaffold_941, scaffold_909, scaffold_1142, scaffold_1495, scaffold_1678
+GF00000017	scaffold_108, scaffold_235, scaffold_97, scaffold_417, scaffold_540, scaffold_650, scaffold_674, scaffold_708, scaffold_878, scaffold_1043, scaffold_1639, scaffold_1634
+GF00000018	scaffold_61, scaffold_136, scaffold_288, scaffold_487, scaffold_635, scaffold_649, scaffold_811, scaffold_786, scaffold_1048, scaffold_1110, scaffold_1484, scaffold_1404
+GF00000019	scaffold_173, scaffold_328, scaffold_503, scaffold_461, scaffold_411, scaffold_1058, scaffold_817, scaffold_902, scaffold_960, scaffold_1188, scaffold_1444, scaffold_1382
+GF00000020	scaffold_260, scaffold_104, scaffold_76, scaffold_140, scaffold_127, scaffold_621, scaffold_231, scaffold_959, scaffold_982, scaffold_1657, scaffold_1548
+GF00000021	scaffold_41, scaffold_141, scaffold_77, scaffold_354, scaffold_466, scaffold_798, scaffold_750, scaffold_748, scaffold_954, scaffold_1397, scaffold_1556
+GF00000022	scaffold_278, scaffold_90, scaffold_525, scaffold_511, scaffold_484, scaffold_652, scaffold_792, scaffold_1002, scaffold_898, scaffold_1482, scaffold_1523
+GF00000023	scaffold_280, scaffold_78, scaffold_471, scaffold_301, scaffold_551, scaffold_430, scaffold_406, scaffold_360, scaffold_569, scaffold_591, scaffold_1138
+GF00000024	scaffold_248, scaffold_408, scaffold_415, scaffold_841, scaffold_832, scaffold_862, scaffold_1167, scaffold_1168, scaffold_1273, scaffold_1387, scaffold_1501
+GF00000025	scaffold_27, scaffold_502, scaffold_583, scaffold_651, scaffold_486, scaffold_801, scaffold_837, scaffold_970, scaffold_1038, scaffold_1534
+GF00000026	scaffold_14, scaffold_145, scaffold_265, scaffold_253, scaffold_128, scaffold_907, scaffold_1178, scaffold_1373, scaffold_1412, scaffold_1726
+GF00000027	scaffold_24, scaffold_117, scaffold_268, scaffold_368, scaffold_550, scaffold_633, scaffold_851, scaffold_875, scaffold_1247, scaffold_1602
+GF00000028	scaffold_170, scaffold_264, scaffold_294, scaffold_230, scaffold_389, scaffold_545, scaffold_815, scaffold_1252, scaffold_1117, scaffold_1331
+GF00000029	scaffold_187, scaffold_554, scaffold_336, scaffold_251, scaffold_480, scaffold_523, scaffold_906, scaffold_1054, scaffold_1525, scaffold_1500
+GF00000030	scaffold_143, scaffold_475, scaffold_207, scaffold_842, scaffold_796, scaffold_1097, scaffold_1253, scaffold_1057, scaffold_1216, scaffold_1725
+GF00000031	scaffold_204, scaffold_185, scaffold_205, scaffold_387, scaffold_305, scaffold_721, scaffold_1146, scaffold_1420, scaffold_1445, scaffold_1509
+GF00000032	scaffold_188, scaffold_307, scaffold_282, scaffold_1033, scaffold_631, scaffold_1398, scaffold_1391, scaffold_1418, scaffold_1209, scaffold_1511
+GF00000033	scaffold_44, scaffold_121, scaffold_544, scaffold_489, scaffold_884, scaffold_553, scaffold_845, scaffold_1589, scaffold_1604
+GF00000034	scaffold_165, scaffold_43, scaffold_414, scaffold_478, scaffold_432, scaffold_1406, scaffold_1441, scaffold_1261, scaffold_1312
+GF00000035	scaffold_91, scaffold_507, scaffold_163, scaffold_342, scaffold_624, scaffold_1086, scaffold_914, scaffold_1004, scaffold_1327
+GF00000036	scaffold_70, scaffold_151, scaffold_131, scaffold_309, scaffold_311, scaffold_541, scaffold_755, scaffold_1165, scaffold_1599
+GF00000037	scaffold_515, scaffold_320, scaffold_379, scaffold_434, scaffold_813, scaffold_620, scaffold_1148, scaffold_1334, scaffold_1394
+GF00000038	scaffold_221, scaffold_92, scaffold_298, scaffold_214, scaffold_585, scaffold_1047, scaffold_1490, scaffold_1629
+GF00000039	scaffold_46, scaffold_198, scaffold_613, scaffold_529, scaffold_617, scaffold_943, scaffold_1332, scaffold_1416
+GF00000040	scaffold_367, scaffold_255, scaffold_160, scaffold_552, scaffold_398, scaffold_661, scaffold_805, scaffold_901
+GF00000041	scaffold_147, scaffold_279, scaffold_794, scaffold_893, scaffold_767, scaffold_956, scaffold_997, scaffold_1250
+GF00000042	scaffold_196, scaffold_692, scaffold_504, scaffold_195, scaffold_576, scaffold_603, scaffold_872, scaffold_1395
+GF00000043	scaffold_58, scaffold_192, scaffold_459, scaffold_722, scaffold_1046, scaffold_905, scaffold_950, scaffold_1402
+GF00000044	scaffold_73, scaffold_126, scaffold_392, scaffold_543, scaffold_592, scaffold_810, scaffold_1014, scaffold_1107
+GF00000045	scaffold_129, scaffold_100, scaffold_229, scaffold_618, scaffold_694, scaffold_854, scaffold_1419, scaffold_1539
+GF00000046	scaffold_156, scaffold_751, scaffold_508, scaffold_814, scaffold_687, scaffold_556, scaffold_1005, scaffold_961
+GF00000047	scaffold_517, scaffold_238, scaffold_932, scaffold_735, scaffold_1535, scaffold_1684, scaffold_1380, scaffold_1485
+GF00000048	scaffold_178, scaffold_630, scaffold_1150, scaffold_743, scaffold_1176, scaffold_1393, scaffold_1503, scaffold_1647
+GF00000049	scaffold_382, scaffold_599, scaffold_913, scaffold_818, scaffold_1175, scaffold_1392, scaffold_1423, scaffold_1301
+GF00000050	scaffold_384, scaffold_691, scaffold_640, scaffold_1064, scaffold_803, scaffold_562, scaffold_986, scaffold_1241
+GF00000051	scaffold_34, scaffold_449, scaffold_491, scaffold_582, scaffold_1706, scaffold_1304, scaffold_1608
+GF00000052	scaffold_65, scaffold_222, scaffold_119, scaffold_246, scaffold_304, scaffold_831, scaffold_1442
+GF00000053	scaffold_32, scaffold_474, scaffold_340, scaffold_557, scaffold_756, scaffold_938, scaffold_1350
+GF00000054	scaffold_29, scaffold_378, scaffold_164, scaffold_718, scaffold_664, scaffold_787, scaffold_547
+GF00000055	scaffold_112, scaffold_495, scaffold_656, scaffold_666, scaffold_558, scaffold_1071, scaffold_1278
+GF00000056	scaffold_60, scaffold_111, scaffold_483, scaffold_654, scaffold_758, scaffold_1068, scaffold_1215
+GF00000057	scaffold_191, scaffold_150, scaffold_847, scaffold_764, scaffold_1245, scaffold_1092, scaffold_1352
+GF00000058	scaffold_101, scaffold_137, scaffold_436, scaffold_734, scaffold_768, scaffold_1228, scaffold_1517
+GF00000059	scaffold_115, scaffold_213, scaffold_497, scaffold_676, scaffold_876, scaffold_788, scaffold_1001
+GF00000060	scaffold_162, scaffold_239, scaffold_531, scaffold_1158, scaffold_1366, scaffold_1474, scaffold_1491
+GF00000061	scaffold_200, scaffold_510, scaffold_731, scaffold_760, scaffold_1128, scaffold_1287, scaffold_1385
+GF00000062	scaffold_171, scaffold_319, scaffold_736, scaffold_838, scaffold_1206, scaffold_1570, scaffold_1623
+GF00000063	scaffold_72, scaffold_186, scaffold_290, scaffold_653, scaffold_1099, scaffold_1026, scaffold_1379
+GF00000064	scaffold_176, scaffold_355, scaffold_705, scaffold_655, scaffold_883, scaffold_953, scaffold_1029
+GF00000065	scaffold_325, scaffold_397, scaffold_427, scaffold_445, scaffold_1076, scaffold_1400, scaffold_1133
+GF00000066	scaffold_219, scaffold_181, scaffold_542, scaffold_501, scaffold_1081, scaffold_1088, scaffold_1486
+GF00000067	scaffold_291, scaffold_413, scaffold_683, scaffold_714, scaffold_793, scaffold_912, scaffold_1378
+GF00000068	scaffold_234, scaffold_539, scaffold_737, scaffold_1077, scaffold_602, scaffold_952, scaffold_1040
+GF00000069	scaffold_323, scaffold_512, scaffold_492, scaffold_671, scaffold_965, scaffold_1326, scaffold_1275
+GF00000070	scaffold_18, scaffold_761, scaffold_703, scaffold_942, scaffold_1204, scaffold_1226
+GF00000071	scaffold_26, scaffold_317, scaffold_609, scaffold_880, scaffold_925, scaffold_1573
+GF00000072	scaffold_22, scaffold_316, scaffold_477, scaffold_690, scaffold_885, scaffold_1667
+GF00000073	scaffold_96, scaffold_728, scaffold_697, scaffold_864, scaffold_1140, scaffold_1169
+GF00000074	scaffold_36, scaffold_352, scaffold_435, scaffold_519, scaffold_833, scaffold_1191
+GF00000075	scaffold_120, scaffold_233, scaffold_347, scaffold_571, scaffold_1114, scaffold_1520
+GF00000076	scaffold_74, scaffold_797, scaffold_979, scaffold_1530, scaffold_1429, scaffold_1594
+GF00000077	scaffold_86, scaffold_228, scaffold_795, scaffold_678, scaffold_891, scaffold_1454
+GF00000078	scaffold_83, scaffold_240, scaffold_610, scaffold_890, scaffold_1070, scaffold_1665
+GF00000079	scaffold_532, scaffold_281, scaffold_776, scaffold_537, scaffold_498, scaffold_897
+GF00000080	scaffold_155, scaffold_341, scaffold_1034, scaffold_1085, scaffold_1699, scaffold_1268
+GF00000081	scaffold_159, scaffold_327, scaffold_850, scaffold_1288, scaffold_1514, scaffold_1660
+GF00000082	scaffold_218, scaffold_183, scaffold_439, scaffold_684, scaffold_1119, scaffold_849
+GF00000083	scaffold_103, scaffold_148, scaffold_396, scaffold_405, scaffold_695, scaffold_1516
+GF00000084	scaffold_106, scaffold_244, scaffold_321, scaffold_1011, scaffold_1489, scaffold_1155
+GF00000085	scaffold_351, scaffold_667, scaffold_665, scaffold_1019, scaffold_1434, scaffold_1588
+GF00000086	scaffold_322, scaffold_778, scaffold_887, scaffold_1056, scaffold_1299, scaffold_1582
+GF00000087	scaffold_269, scaffold_494, scaffold_1372, scaffold_962, scaffold_1243, scaffold_1564
+GF00000088	scaffold_361, scaffold_318, scaffold_772, scaffold_1113, scaffold_1618, scaffold_1655
+GF00000089	scaffold_500, scaffold_464, scaffold_429, scaffold_614, scaffold_1433, scaffold_1145
+GF00000090	scaffold_271, scaffold_616, scaffold_528, scaffold_1050, scaffold_1049, scaffold_1598
+GF00000091	scaffold_1, scaffold_820, scaffold_1238, scaffold_1265, scaffold_1494
+GF00000092	scaffold_63, scaffold_52, scaffold_740, scaffold_791, scaffold_1388
+GF00000093	scaffold_153, scaffold_346, scaffold_607, scaffold_642, scaffold_1322
+GF00000094	scaffold_206, scaffold_560, scaffold_868, scaffold_823, scaffold_929
+GF00000095	scaffold_48, scaffold_212, scaffold_225, scaffold_863, scaffold_1468
+GF00000096	scaffold_13, scaffold_386, scaffold_1124, scaffold_822, scaffold_1579
+GF00000097	scaffold_277, scaffold_446, scaffold_345, scaffold_685, scaffold_1499
+GF00000098	scaffold_85, scaffold_308, scaffold_715, scaffold_1045, scaffold_1157
+GF00000099	scaffold_399, scaffold_337, scaffold_615, scaffold_858, scaffold_1139
+GF00000100	scaffold_33, scaffold_425, scaffold_419, scaffold_804, scaffold_839
+GF00000101	scaffold_84, scaffold_217, scaffold_499, scaffold_468, scaffold_647
+GF00000102	scaffold_373, scaffold_447, scaffold_984, scaffold_873, scaffold_1291
+GF00000103	scaffold_59, scaffold_1051, scaffold_1198, scaffold_1229, scaffold_1714
+GF00000104	scaffold_64, scaffold_184, scaffold_252, scaffold_663, scaffold_1063
+GF00000105	scaffold_54, scaffold_730, scaffold_969, scaffold_1061, scaffold_1096
+GF00000106	scaffold_130, scaffold_520, scaffold_859, scaffold_899, scaffold_1024
+GF00000107	scaffold_125, scaffold_324, scaffold_313, scaffold_534, scaffold_766
+GF00000108	scaffold_241, scaffold_365, scaffold_403, scaffold_996, scaffold_1177
+GF00000109	scaffold_193, scaffold_421, scaffold_412, scaffold_675, scaffold_744
+GF00000110	scaffold_272, scaffold_739, scaffold_747, scaffold_926, scaffold_1220
+GF00000111	scaffold_401, scaffold_456, scaffold_581, scaffold_374, scaffold_1082
+GF00000112	scaffold_266, scaffold_424, scaffold_745, scaffold_995, scaffold_1187
+GF00000113	scaffold_310, scaffold_232, scaffold_385, scaffold_1079, scaffold_1654
+GF00000114	scaffold_284, scaffold_457, scaffold_454, scaffold_711, scaffold_1012
+GF00000115	scaffold_462, scaffold_990, scaffold_1136, scaffold_1351, scaffold_1266
+GF00000116	scaffold_330, scaffold_808, scaffold_881, scaffold_1091, scaffold_1129
+GF00000117	scaffold_644, scaffold_1439, scaffold_1691, scaffold_1343, scaffold_1533
+GF00000118	scaffold_8, scaffold_857, scaffold_1190, scaffold_1336
+GF00000119	scaffold_10, scaffold_39, scaffold_236, scaffold_587
+GF00000120	scaffold_247, scaffold_789, scaffold_1498, scaffold_1368
+GF00000121	scaffold_38, scaffold_606, scaffold_1356, scaffold_1694
+GF00000122	scaffold_276, scaffold_350, scaffold_1111, scaffold_1123
+GF00000123	scaffold_312, scaffold_57, scaffold_452, scaffold_580
+GF00000124	scaffold_75, scaffold_177, scaffold_1159, scaffold_1224
+GF00000125	scaffold_47, scaffold_349, scaffold_518, scaffold_963
+GF00000126	scaffold_31, scaffold_886, scaffold_892, scaffold_949
+GF00000127	scaffold_98, scaffold_110, scaffold_565, scaffold_481
+GF00000128	scaffold_161, scaffold_154, scaffold_586, scaffold_939
+GF00000129	scaffold_67, scaffold_601, scaffold_861, scaffold_809
+GF00000130	scaffold_303, scaffold_242, scaffold_713, scaffold_625
+GF00000131	scaffold_88, scaffold_1208, scaffold_1214, scaffold_1595
+GF00000132	scaffold_152, scaffold_287, scaffold_505, scaffold_1074
+GF00000133	scaffold_243, scaffold_273, scaffold_727, scaffold_763
+GF00000134	scaffold_261, scaffold_627, scaffold_388, scaffold_1021
+GF00000135	scaffold_371, scaffold_871, scaffold_988, scaffold_1607
+GF00000136	scaffold_220, scaffold_442, scaffold_619, scaffold_967
+GF00000137	scaffold_209, scaffold_570, scaffold_840, scaffold_1134
+GF00000138	scaffold_216, scaffold_1496, scaffold_1550, scaffold_1578
+GF00000139	scaffold_455, scaffold_561, scaffold_698, scaffold_1715
+GF00000140	scaffold_506, scaffold_422, scaffold_682, scaffold_1072
+GF00000141	scaffold_256, scaffold_356, scaffold_904, scaffold_816
+GF00000142	scaffold_199, scaffold_1065, scaffold_1163, scaffold_1701
+GF00000143	scaffold_555, scaffold_296, scaffold_460, scaffold_1018
+GF00000144	scaffold_441, scaffold_806, scaffold_1614, scaffold_1698
+GF00000145	scaffold_704, scaffold_769, scaffold_472, scaffold_1477
+GF00000146	scaffold_135, scaffold_114, scaffold_637, scaffold_1663
+GF00000147	scaffold_359, scaffold_295, scaffold_888, scaffold_1671
+GF00000148	scaffold_482, scaffold_895, scaffold_994, scaffold_1559
+GF00000149	scaffold_362, scaffold_733, scaffold_1022, scaffold_1262
+GF00000150	scaffold_293, scaffold_783, scaffold_723, scaffold_1027
+GF00000151	scaffold_395, scaffold_648, scaffold_799, scaffold_966
+GF00000152	scaffold_567, scaffold_670, scaffold_1320, scaffold_1458
+GF00000153	scaffold_21, scaffold_660, scaffold_1459
+GF00000154	scaffold_19, scaffold_400, scaffold_634
+GF00000155	scaffold_49, scaffold_549, scaffold_699
+GF00000156	scaffold_81, scaffold_377, scaffold_348
+GF00000157	scaffold_94, scaffold_1104, scaffold_1640
+GF00000158	scaffold_116, scaffold_1203, scaffold_1274
+GF00000159	scaffold_169, scaffold_710, scaffold_1340
+GF00000160	scaffold_166, scaffold_299, scaffold_1197
+GF00000161	scaffold_42, scaffold_409, scaffold_669
+GF00000162	scaffold_250, scaffold_688, scaffold_889
+GF00000163	scaffold_7, scaffold_998, scaffold_1504
+GF00000164	scaffold_332, scaffold_643, scaffold_951
+GF00000165	scaffold_123, scaffold_197, scaffold_673
+GF00000166	scaffold_55, scaffold_174, scaffold_375
+GF00000167	scaffold_132, scaffold_175, scaffold_770
+GF00000168	scaffold_124, scaffold_824, scaffold_1536
+GF00000169	scaffold_149, scaffold_1285, scaffold_1408
+GF00000170	scaffold_210, scaffold_628, scaffold_473
+GF00000171	scaffold_107, scaffold_928, scaffold_1324
+GF00000172	scaffold_513, scaffold_725, scaffold_1305
+GF00000173	scaffold_66, scaffold_605, scaffold_1008
+GF00000174	scaffold_259, scaffold_158, scaffold_700
+GF00000175	scaffold_80, scaffold_600, scaffold_1181
+GF00000176	scaffold_182, scaffold_402, scaffold_1529
+GF00000177	scaffold_144, scaffold_536, scaffold_1584
+GF00000178	scaffold_258, scaffold_894, scaffold_1055
+GF00000179	scaffold_263, scaffold_283, scaffold_1269
+GF00000180	scaffold_372, scaffold_1041, scaffold_1120
+GF00000181	scaffold_668, scaffold_596, scaffold_490
+GF00000182	scaffold_535, scaffold_1239, scaffold_1335
+GF00000183	scaffold_443, scaffold_1317, scaffold_1370
+GF00000184	scaffold_383, scaffold_790, scaffold_1528
+GF00000185	scaffold_224, scaffold_1452, scaffold_1453
+GF00000186	scaffold_267, scaffold_476, scaffold_1000
+GF00000187	scaffold_521, scaffold_1611, scaffold_1727
+GF00000188	scaffold_423, scaffold_1010, scaffold_919
+GF00000189	scaffold_458, scaffold_338, scaffold_333
+GF00000190	scaffold_369, scaffold_488, scaffold_780
+GF00000191	scaffold_672, scaffold_757, scaffold_1519
+GF00000192	scaffold_393, scaffold_827, scaffold_1230
+GF00000193	scaffold_407, scaffold_418, scaffold_985
+GF00000194	scaffold_584, scaffold_689, scaffold_918
+GF00000195	scaffold_973, scaffold_1510, scaffold_1638
+GF00000196	scaffold_612, scaffold_638, scaffold_1344
+GF00000197	scaffold_593, scaffold_1298, scaffold_972
+GF00000198	scaffold_390, scaffold_1095, scaffold_1674
+GF00000199	scaffold_706, scaffold_1270, scaffold_1330
+GF00000200	scaffold_524, scaffold_879, scaffold_1446
+GF00000201	scaffold_574, scaffold_575, scaffold_1633
+GF00000202	scaffold_812, scaffold_1642, scaffold_1641
+GF00000203	scaffold_641, scaffold_693, scaffold_1713
+GF00000204	scaffold_771, scaffold_931, scaffold_1328
+GF00000205	scaffold_802, scaffold_1610, scaffold_1362
+GF00000206	scaffold_1358, scaffold_991, scaffold_992
+GF00000207	scaffold_936, scaffold_1039, scaffold_1314
+GF00000208	scaffold_1205, scaffold_1690, scaffold_1723
+GF00000209	scaffold_1231, scaffold_1355, scaffold_1414
+GF00000210	scaffold_1587, scaffold_1625, scaffold_1659
+GF00000211	scaffold_1172, scaffold_738, scaffold_1526
+GF00000212	scaffold_980, scaffold_1307, scaffold_1475
+GF00000213	scaffold_1703, scaffold_1681, scaffold_1724
+GF00000214	scaffold_3, scaffold_957
+GF00000215	scaffold_40, scaffold_380
+GF00000216	scaffold_5, scaffold_1222
+GF00000217	scaffold_35, scaffold_286
+GF00000218	scaffold_87, scaffold_680
+GF00000219	scaffold_326, scaffold_1025
+GF00000220	scaffold_79, scaffold_741
+GF00000221	scaffold_168, scaffold_779
+GF00000222	scaffold_118, scaffold_1062
+GF00000223	scaffold_157, scaffold_933
+GF00000224	scaffold_203, scaffold_719
+GF00000225	scaffold_122, scaffold_915
+GF00000226	scaffold_226, scaffold_254
+GF00000227	scaffold_237, scaffold_742
+GF00000228	scaffold_180, scaffold_1101
+GF00000229	scaffold_223, scaffold_681
+GF00000230	scaffold_50, scaffold_1118
+GF00000231	scaffold_285, scaffold_1479
+GF00000232	scaffold_391, scaffold_1318
+GF00000233	scaffold_215, scaffold_774
+GF00000234	scaffold_463, scaffold_559
+GF00000235	scaffold_172, scaffold_867
+GF00000236	scaffold_404, scaffold_826
+GF00000237	scaffold_292, scaffold_227
+GF00000238	scaffold_257, scaffold_657
+GF00000239	scaffold_453, scaffold_623
+GF00000240	scaffold_102, scaffold_993
+GF00000241	scaffold_589, scaffold_1042
+GF00000242	scaffold_509, scaffold_834
+GF00000243	scaffold_546, scaffold_1646
+GF00000244	scaffold_785, scaffold_479
+GF00000245	scaffold_376, scaffold_578
+GF00000246	scaffold_577, scaffold_752
+GF00000247	scaffold_622, scaffold_1103
+GF00000248	scaffold_270, scaffold_916
+GF00000249	scaffold_679, scaffold_716
+GF00000250	scaffold_438, scaffold_869
+GF00000251	scaffold_870, scaffold_440
+GF00000252	scaffold_353, scaffold_573
+GF00000253	scaffold_874, scaffold_775
+GF00000254	scaffold_753, scaffold_1427
+GF00000255	scaffold_696, scaffold_1006
+GF00000256	scaffold_908, scaffold_903
+GF00000257	scaffold_830, scaffold_1310
+GF00000258	scaffold_448, scaffold_974
+GF00000259	scaffold_594, scaffold_964
+GF00000260	scaffold_1443, scaffold_1673
+GF00000261	scaffold_1052, scaffold_1141
+GF00000262	scaffold_1137, scaffold_1257
+GF00000263	scaffold_1161, scaffold_1677
+GF00000264	scaffold_1031, scaffold_1493
+GF00000265	scaffold_947, scaffold_1017
+GF00000266	scaffold_1078, scaffold_1192
+GF00000267	scaffold_1094, scaffold_1122
+GF00000268	scaffold_927, scaffold_759
+GF00000269	scaffold_702, scaffold_344
+GF00000270	scaffold_1277, scaffold_1381
+GF00000271	scaffold_843, scaffold_1601
+GF00000272	scaffold_1246, scaffold_1364
+GF00000273	scaffold_1258, scaffold_1333
+GF00000274	scaffold_1020, scaffold_1059
+GF00000275	scaffold_1060, scaffold_1143
+GF00000276	scaffold_1121, scaffold_1389
+GF00000277	scaffold_1309, scaffold_1456
+GF00000278	scaffold_1084, scaffold_1102
+GF00000279	scaffold_946, scaffold_989
+GF00000280	scaffold_1376, scaffold_1555
+GF00000281	scaffold_1289, scaffold_1283
+GF00000282	scaffold_1195, scaffold_1367
+GF00000283	scaffold_1164, scaffold_1296
+GF00000284	scaffold_1422, scaffold_1538
+GF00000285	scaffold_1116, scaffold_1251
+GF00000286	scaffold_1349, scaffold_1430
+GF00000287	scaffold_1202, scaffold_1300
+GF00000288	scaffold_1461, scaffold_1546
+GF00000289	scaffold_1359, scaffold_1437
+GF00000290	scaffold_1428, scaffold_1363
+GF00000291	scaffold_1676, scaffold_1242
+GF00000292	scaffold_1411, scaffold_1466
+GF00000293	scaffold_1281, scaffold_1369
+GF00000294	scaffold_1399, scaffold_1532
+GF00000295	scaffold_1591, scaffold_1106
+GF00000296	scaffold_1502, scaffold_1668
+GF00000297	scaffold_1609, scaffold_1472
+GF00000298	scaffold_1417, scaffold_1571
+GF00000299	scaffold_1661, scaffold_1098
+GF00000300	scaffold_1271, scaffold_1236
+GF00000301	scaffold_1462, scaffold_1567
+GF00000302	scaffold_1487, scaffold_1527
+GF00000303	scaffold_1282, scaffold_1522
+GF00000304	scaffold_1384, scaffold_1467
+GF00000305	scaffold_923, scaffold_1080
+GF00000306	scaffold_896, scaffold_911
+GF00000307	scaffold_1471, scaffold_1680
+GF00000308	scaffold_1342, scaffold_1347
+GF00000309	scaffold_1483, scaffold_1711
+GF00000310	scaffold_1460, scaffold_1469
+GF00000311	scaffold_1481, scaffold_1672
+GF00000312	scaffold_1710, scaffold_1644
+GF00000313	scaffold_1149, scaffold_1115
+GF00000314	scaffold_1173, scaffold_1174
+GF00000315	scaffold_1186, scaffold_1151
+GF00000316	scaffold_1628, scaffold_1700
+GF00000317	scaffold_1357, scaffold_1109
+GF00000318	scaffold_1279, scaffold_1237
+GF00000319	scaffold_1189, scaffold_1365
+GF00000320	scaffold_1592, scaffold_1597
+GF00000321	scaffold_1345, scaffold_1225
+GF00000322	scaffold_1390, scaffold_1248
+GF00000323	scaffold_1302, scaffold_1339
+GF00000324	scaffold_1221, scaffold_1464
+GF00000325	scaffold_1311, scaffold_1353
+GF00000326	scaffold_1348, scaffold_1341
+GF00000327	scaffold_1308, scaffold_1415
+GF00000328	scaffold_1401, scaffold_1360
+GF00000329	scaffold_1621, scaffold_1249
+GF00000330	scaffold_1440, scaffold_1361
+GF00000331	scaffold_1438, scaffold_1431
+GF00000332	scaffold_1405, scaffold_1508
+GF00000333	scaffold_1622, scaffold_1338
+GF00000334	scaffold_1286, scaffold_1692
+GF00000335	scaffold_1457, scaffold_1521
+GF00000336	scaffold_1506, scaffold_1507
+GF00000337	scaffold_1465, scaffold_1605
+GF00000338	scaffold_1552, scaffold_1566
+GF00000339	scaffold_1561, scaffold_1560
+GF00000340	scaffold_1513, scaffold_1616
+GF00000341	scaffold_1436, scaffold_1650
+GF00000342	scaffold_1652, scaffold_1563
+GF00000343	scaffold_1670, scaffold_1679
+GF00000344	scaffold_1709, scaffold_1708
+GF00000345	scaffold_37
+GF00000346	scaffold_62
+GF00000347	scaffold_93
+GF00000348	scaffold_948
+GF00000349	scaffold_1569
+GF00000350	scaffold_1264
+GF00000351	scaffold_1547
+GF00000352	scaffold_1371
+GF00000353	scaffold_1704
+GF00000354	scaffold_1631
+GF00000355	scaffold_1218
+GF00000356	scaffold_1455
+GF00000357	scaffold_1580
+GF00000358	scaffold_1213
+GF00000359	scaffold_1306
+GF00000360	scaffold_1160
+GF00000361	scaffold_1375
+GF00000362	scaffold_1497
+GF00000363	scaffold_1603
+GF00000364	scaffold_1593
+GF00000365	scaffold_1447
+GF00000366	scaffold_1329
+GF00000367	scaffold_1581
+GF00000368	scaffold_1586
+GF00000369	scaffold_1315
+GF00000370	scaffold_1613
+GF00000371	scaffold_1722
+GF00000372	scaffold_726
+GF00000373	scaffold_1686
+GF00000374	scaffold_1626
+GF00000375	scaffold_1662
+GF00000376	scaffold_1576
+GF00000377	scaffold_1403
+GF00000378	scaffold_945
+GF00000379	scaffold_1219
+GF00000380	scaffold_1553
+GF00000381	scaffold_420
+GF00000382	scaffold_1448
+GF00000383	scaffold_1105
+GF00000384	scaffold_1689
+GF00000385	scaffold_1664
+GF00000386	scaffold_1421
+GF00000387	scaffold_1409
+GF00000388	scaffold_1297
+GF00000389	scaffold_1558
+GF00000390	scaffold_1683
+GF00000391	scaffold_1090
+GF00000392	scaffold_1013
+GF00000393	scaffold_1705
+GF00000394	scaffold_1280
+GF00000395	scaffold_1410
+GF00000396	scaffold_1568
+GF00000397	scaffold_1426
+GF00000398	scaffold_1126
+GF00000399	scaffold_754
+GF00000400	scaffold_1337
+GF00000401	scaffold_1313
+GF00000402	scaffold_1653
+GF00000403	scaffold_1541
+GF00000404	scaffold_1132
+GF00000405	scaffold_1449
+GF00000406	scaffold_1290
+GF00000407	scaffold_1171
+GF00000408	scaffold_1316
+GF00000409	scaffold_1131
+GF00000410	scaffold_1036
+GF00000411	scaffold_1717
+GF00000412	scaffold_1450
+GF00000413	scaffold_1166
+GF00000414	scaffold_1702
+GF00000415	scaffold_777
+GF00000416	scaffold_1590
+GF00000417	scaffold_720
+GF00000418	scaffold_1009
+GF00000419	scaffold_1669
+GF00000420	scaffold_1537
+GF00000421	scaffold_1432
+GF00000422	scaffold_1540
+GF00000423	scaffold_1596
+GF00000424	scaffold_1407
+GF00000425	scaffold_1211
+GF00000426	scaffold_1028
+GF00000427	scaffold_1531
+GF00000428	scaffold_1645
+GF00000429	scaffold_865
+GF00000430	scaffold_1185
+GF00000431	scaffold_1217
+GF00000432	scaffold_1292
+GF00000433	scaffold_977
+GF00000434	scaffold_1583
+GF00000435	scaffold_1518
+GF00000436	scaffold_1023
+GF00000437	scaffold_1617
+GF00000438	scaffold_1480
+GF00000439	scaffold_1565
+GF00000440	scaffold_1303
+GF00000441	scaffold_1127
+GF00000442	scaffold_1108
+GF00000443	scaffold_1425
+GF00000444	scaffold_1323
+GF00000445	scaffold_1693
+GF00000446	scaffold_1184
+GF00000447	scaffold_1478
+GF00000448	scaffold_709
+GF00000449	scaffold_1543
+GF00000450	scaffold_1636
+GF00000451	scaffold_1696
+GF00000452	scaffold_1554
+GF00000453	scaffold_1695
+GF00000454	scaffold_1476
+GF00000455	scaffold_978
+GF00000456	scaffold_1321
+GF00000457	scaffold_1260
+GF00000458	scaffold_975
+GF00000459	scaffold_1697
+GF00000460	scaffold_1374
+GF00000461	scaffold_1212
+GF00000462	scaffold_1562
+GF00000463	scaffold_1396
+GF00000464	scaffold_1688
+GF00000465	scaffold_1377
+GF00000466	scaffold_1515
+GF00000467	scaffold_1574
+GF00000468	scaffold_1687
+GF00000469	scaffold_1512
+GF00000470	scaffold_1632
+GF00000471	scaffold_1162
+GF00000472	scaffold_1233
+GF00000473	scaffold_1473
+GF00000474	scaffold_1643
+GF00000475	scaffold_1637
+GF00000476	scaffold_844
+GF00000477	scaffold_1492
+GF00000478	scaffold_821
+GF00000479	scaffold_1656
+GF00000480	scaffold_1413
+GF00000481	scaffold_1232
+GF00000482	scaffold_1666
+GF00000483	scaffold_1100
+GF00000484	scaffold_1718
+GF00000485	scaffold_924
+GF00000486	scaffold_1606
+GF00000487	scaffold_1470
+GF00000488	scaffold_1719
+GF00000489	scaffold_1180
+GF00000490	scaffold_1557
+GF00000491	scaffold_1003
+GF00000492	scaffold_1549
+GF00000493	scaffold_1721
+GF00000494	scaffold_1263
+GF00000495	scaffold_1383
+GF00000496	scaffold_1130
+GF00000497	scaffold_1575
+GF00000498	scaffold_1505
+GF00000499	scaffold_1635
+GF00000500	scaffold_1649
+GF00000501	scaffold_1600
+GF00000502	scaffold_1544
+GF00000503	scaffold_1087
+GF00000504	scaffold_877
+GF00000505	scaffold_1244
+GF00000506	scaffold_1712
+GF00000507	scaffold_677
+GF00000508	scaffold_1585
+GF00000509	scaffold_1016
+GF00000510	scaffold_1007
+GF00000511	scaffold_1135
+GF00000512	scaffold_1572
+GF00000513	scaffold_1716
+GF00000514	scaffold_1463
+GF00000515	scaffold_1255
+GF00000516	scaffold_1707
+GF00000517	scaffold_1295
+GF00000518	scaffold_1682
+GF00000519	scaffold_968
