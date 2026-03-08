@@ -1,17 +1,18 @@
 # genome duplication pipeline
 ##  wgd v2.0.38
-mafft v7.525 (2024/Mar/13)
-FastTree 2.2.0
-mcl 22-282
-diamond version 2.0.6
+- mafft v7.525 (2024/Mar/13)
+- FastTree 2.2.0
+- mcl 22-282
+- diamond version 2.0.6
 
-ewdsssssss555555 // tangens
+# ewdsssssss555555 // tangens
 
-# data
-Auricularia_delicata.fasta
+
+## Auricularia_delicata.fasta
 - 1531 scaffolds
 - 74920203 bp
 - 69053340 bp w/o N
+- 169070 genes
 ````bash N DISTRIBUTION
 cat Auricularia_delicata.fasta | grep -oP 'N{10,}' | awk '{print length($0)}' | sort -n | uniq -c
 # N distribution
@@ -68,7 +69,7 @@ cat Auricularia_delicata.fasta | grep -oP 'N{10,}' | awk '{print length($0)}' | 
   94934 60N
 ````
 
-Aurde1_AssemblyScaffolds.fasta.gz
+## Aurde1_AssemblyScaffolds.fasta.gz
 - 666 scaffolds
 - 74920203 bp
 - 69053340 bp w/o N
@@ -136,13 +137,109 @@ Aurde1_AssemblyScaffolds.fasta.gz
   80915 70N
 ````
 
-
+## Exigl1_AssemblyScaffolds.fasta
+- 1727 scaffolds
+- 78171509 bp
+- 71707041 bp w/o N
+- 322147 genes 
+  - (Exigl1_all_proteins_20130529.aa.fasta.gz)
+````bash N DIST
+     53 10N
+     77 11N
+     58 12N
+     65 13N
+     82 14N
+     51 15N
+     66 16N
+     67 17N
+     66 18N
+     76 19N
+     60 20N
+     60 21N
+     60 22N
+     62 23N
+     65 24N
+     66 25N
+     63 26N
+     64 27N
+     58 28N
+     61 29N
+     49 30N
+     74 31N
+     69 32N
+     70 33N
+     72 34N
+     73 35N
+     56 36N
+     61 37N
+     74 38N
+     73 39N
+     65 40N
+     63 41N
+     63 42N
+     67 43N
+     79 44N
+     63 45N
+     56 46N
+     53 47N
+     75 48N
+     76 49N
+     63 50N
+     88 51N
+     78 52N
+     68 53N
+     67 54N
+     60 55N
+     55 56N
+     67 57N
+     63 58N
+     76 59N
+     83 60N
+     76 61N
+     57 62N
+     64 63N
+     67 64N
+     57 65N
+     72 66N
+     60 67N
+     54 68N
+     61 69N
+  90072 70N
+````
 # wgd
 
 ````bash
 nohup wgd dmd ../Data/Aurde1/auri.fasta -o Auri_dmd/ &
- nohup wgd dmd ../Data/Exigl1/exig.fasta -o Exig_dmd/
+nohup wgd dmd ../Data/Exigl1/exig.fasta -o Exig_dmd/ &
 
 
 nohup wgd ksd ../DMD/Auri_dmd/auri.fasta.tsv ../../Data/Aurde1/auri.fasta -o Auri_ksd &
+````
+
+````bash
+# dmd
+# for prot just add --prot
+nohup wgd dmd \\
+Data/Aurde1/Aurde1_all_CDS_20110213.fasta \\ 
+-o Results/CDS_DMD/Auri/ \\
+-n 10 > Results/CDS_DMD/Auri/aurdi.out 2>&1 &
+
+nohup wgd dmd \\
+Data/Exigl1/Exigl1_all_CDS_20130529.fasta \\
+-o Results/CDS_DMD/Exig \\
+-n 10 > Results/CDS_DMD/Exig/exig.out 2>&1 &
+
+# ksd
+nohup wgd ksd \\
+Results/CDS_DMD/Auri/Aurde1_all_CDS_20110213.fasta.tsv \\
+Data/Aurde1/Aurde1_all_CDS_20110213.fasta \\
+-o Results/CDS_KSD/Auri/ \\
+-n 15 > Results/CDS_KSD/Auri/auri_ksd.out 2>&1 
+
+nohup wgd ksd \\
+Results/CDS_DMD/Exig/Exigl1_all_CDS_20130529.fasta.tsv \\
+Data/Exigl1/Exigl1_all_CDS_20130529.fasta \\
+-o Results/CDS_KSD/Exig/ \\
+-n 15 > Results/CDS_KSD/Exig/exig_ksd.out 2>&1 &
+
 ````
