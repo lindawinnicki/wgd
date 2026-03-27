@@ -243,3 +243,27 @@ Data/Exigl1/Exigl1_GeneCatalog_CDS_20130529.fasta \\
 -n 15 > Results/CDS_KSD/Exig/exig_ksd.out 2>&1 &
 
 ````
+JGI has labeled their fasta file with headers like ">jgi|Aurde1|155376|gm1.1_g" instead of just "gm1.1_g" in their CDS-fasta files, but not the gff3 file. So we are using sed to update so they match when we use them in the synteny analysis. We do it fo the ks.tsv (wgd ksd) and .tsv (from wgd dmd), instead of in the fasta file so we don't have to rerun the analysis.
+
+````bash
+sed 's/jgi|Aurde1|[0-9]*|//g' # remove jgi|Aurde1|literally + any number up until the next| (keeping only the gene name), and do this "globally"
+Aurde1_GeneCatalog_CDS_20110213.fasta.tsv > Aurde1_GeneCatalog_CDS_20110213_clean.fasta.tsv
+
+sed 's/jgi|Aurde1|[0-9]*|//g' Aurde1_GeneCatalog_CDS_20110213.fasta.tsv.ks.tsv > Aurde1_GeneCatalog_CDS_20110213_clean.fasta.tsv.ks.tsv
+
+sed 's/jgi|Exigl1|[0-9]*|//g' Exigl1_GeneCatalog_CDS_20130529.fasta.tsv > Exigl1_GeneCatalog_CDS_20130529_clean.fasta.tsv
+
+sed 's/jgi|Exigl1|[0-9]*|//g' Exigl1_GeneCatalog_CDS_20130529.fasta.tsv.ks.tsv > Exigl1_GeneCatalog_CDS_20130529_clean.fasta.tsv.ks.tsv
+````
+
+Another issue is that not any of the Exidia gff files match the gene names in our cleaned up files (nor the "raw" ones), so I made a pythonscript that creates a .gff file that will match:
+
+````bash
+python Scripts/gff_make_genes.py
+````
+Now we can run the two wgd syn analysis:
+````bash
+nohup wgd syn Results/CDS_DMD/Auri/Aurde1_GeneCatalog_CDS_20110213_clean.fasta.tsv -a Name -f gene Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3 -ks Results/CDS_KSD/Auri/Aurde1_GeneCatalog_CDS_20110213_clean.fasta.tsv.ks.tsv -o Results/CDS_SYN/Auri -n 15 > Results/CDS_SYN/Auri/auri_syn.out 2>&1 &
+
+nohup wgd syn Results/CDS_DMD/Exig/Exigl1_GeneCatalog_CDS_20130529_clean.fasta.tsv Scripts/exidia.gff -ks Results/CDS_KSD/Exig/Exigl1_GeneCatalog_CDS_20130529.fasta_clean.tsv.ks.tsv -o Results/CDS_SYN/Exig -n 15 > Results/CDS_SYN/Exig/exig_syn.out 2>&1 &
+````
