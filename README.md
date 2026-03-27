@@ -209,14 +209,6 @@ cat Auricularia_delicata.fasta | grep -oP 'N{10,}' | awk '{print length($0)}' | 
 # wgd
 
 ````bash
-nohup wgd dmd ../Data/Aurde1/auri.fasta -o Auri_dmd/ &
-nohup wgd dmd ../Data/Exigl1/exig.fasta -o Exig_dmd/ &
-
-
-nohup wgd ksd ../DMD/Auri_dmd/auri.fasta.tsv ../../Data/Aurde1/auri.fasta -o Auri_ksd &
-````
-
-````bash
 # dmd
 # for prot just add --prot
 nohup wgd dmd \\
@@ -228,6 +220,11 @@ nohup wgd dmd \\
 Data/Exigl1/Exigl1_GeneCatalog_CDS_20130529.fasta \\
 -o Results/CDS_DMD/Exig \\
 -n 10 > Results/CDS_DMD/Exig/exig.out 2>&1 &
+
+nohup wgd dmd \\
+Data/Calco1/Calco1_GeneCatalog_CDS_20130417.fasta \\
+-o Results/CDS_DMD/Calco/ \\
+-n 15 > Results/CDS_DMD/Calco/calco_dmd.out 2>&1 &
 
 # ksd
 nohup wgd ksd \\
@@ -242,6 +239,11 @@ Data/Exigl1/Exigl1_GeneCatalog_CDS_20130529.fasta \\
 -o Results/CDS_KSD/Exig/ \\
 -n 15 > Results/CDS_KSD/Exig/exig_ksd.out 2>&1 &
 
+nohup wgd ksd \\
+Results/CDS_DMD/Calco/Calco1_GeneCatalog_CDS_20130417.fasta.tsv \\
+Data/Calco1/Calco1_GeneCatalog_CDS_20130417.fasta \\
+-o Results/CDS_KSD/Calco/ \\
+-n 15 > Results/CDS_KSD/Calco/calco_ksd.out 2>&1 &
 ````
 JGI has labeled their fasta file with headers like ">jgi|Aurde1|155376|gm1.1_g" instead of just "gm1.1_g" in their CDS-fasta files, but not the gff3 file. So we are using sed to update so they match when we use them in the synteny analysis. We do it fo the ks.tsv (wgd ksd) and .tsv (from wgd dmd), instead of in the fasta file so we don't have to rerun the analysis.
 
@@ -265,5 +267,5 @@ Now we can run the two wgd syn analysis:
 ````bash
 nohup wgd syn Results/CDS_DMD/Auri/Aurde1_GeneCatalog_CDS_20110213_clean.fasta.tsv -a Name -f gene Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3 -ks Results/CDS_KSD/Auri/Aurde1_GeneCatalog_CDS_20110213_clean.fasta.tsv.ks.tsv -o Results/CDS_SYN/Auri -n 15 > Results/CDS_SYN/Auri/auri_syn.out 2>&1 &
 
-nohup wgd syn Results/CDS_DMD/Exig/Exigl1_GeneCatalog_CDS_20130529_clean.fasta.tsv Scripts/exidia.gff -ks Results/CDS_KSD/Exig/Exigl1_GeneCatalog_CDS_20130529.fasta_clean.tsv.ks.tsv -o Results/CDS_SYN/Exig -n 15 > Results/CDS_SYN/Exig/exig_syn.out 2>&1 &
+nohup wgd syn Results/CDS_DMD/Exig/Exigl1_GeneCatalog_CDS_20130529_clean.fasta.tsv Scripts/exidia.gff -ks Results/CDS_KSD/Exig/Exigl1_GeneCatalog_CDS_20130529_clean.fasta.tsv.ks.tsv -o Results/CDS_SYN/Exig -n 15 > Results/CDS_SYN/Exig/exig_syn.out 2>&1 &
 ````

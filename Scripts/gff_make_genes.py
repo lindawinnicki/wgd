@@ -2,7 +2,7 @@
 
 genes = {} # empty dict
 
-with open("../Data/Exigl1/Exigl1_all_genes_20130529.gff") as fin:
+with open("../Data/Calco1/Calco1_all_genes_20130417.gff") as fin:
 	for line in fin:
 		parts = line.strip().split("\t")
 		feature = parts[2] # following the gff format (https://www.ensembl.org/info/website/upload/gff.html)
@@ -31,6 +31,6 @@ with open("../Data/Exigl1/Exigl1_all_genes_20130529.gff") as fin:
 			genes[gene][3] = max(genes[gene][3], end) # end with the last
 
 # write to file
-with open("exidia.gff", "w") as fout:
+with open("calco.gff", "w") as fout:
 	for gene, (scaffold, source, start, end, score, strand, frame) in genes.items():
 		fout.write(f"{scaffold}\t{source}\tgene\t{start}\t{end}\t{score}\t{strand}\t{frame}\tID={gene}\n")

@@ -9,3 +9,6 @@
 *.gff3
 *.gtf
 *.dmnd
+*.gff
+scaffold_*
+*.tsv
