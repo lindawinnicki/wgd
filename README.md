@@ -4,7 +4,7 @@
 - FastTree 2.2.0
 - mcl 22-282
 - diamond version 2.0.6
-
+- i-ADHoRe version 3.0 19 November 2007
 # ewdsssssss555555 // tangens
 
 
