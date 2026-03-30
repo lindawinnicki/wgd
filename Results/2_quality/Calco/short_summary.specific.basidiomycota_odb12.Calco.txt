@@ -1,0 +1,17 @@
+# BUSCO version is: 6.0.0 
+# The lineage dataset is: basidiomycota_odb12 (Creation date: 2025-07-01, number of genomes: 78, number of BUSCOs: 2409)
+# Summarized benchmarking in BUSCO notation for file /home/inf-20-2025/wgd/Data/Calco1/Calco1_GeneCatalog_proteins_20130417.aa.fasta
+# BUSCO was run in mode: proteins
+
+	***** Results: *****
+
+	C:93.3%[S:92.8%,D:0.5%],F:3.2%,M:3.6%,n:2409	   
+	2247	Complete BUSCOs (C)			   
+	2235	Complete and single-copy BUSCOs (S)	   
+	12	Complete and duplicated BUSCOs (D)	   
+	76	Fragmented BUSCOs (F)			   
+	86	Missing BUSCOs (M)			   
+	2409	Total BUSCO groups searched		   
+
+Dependencies and versions:
+	hmmsearch: 3.4

@@ -5,6 +5,7 @@
 - mcl 22-282
 - diamond version 2.0.6
 - i-ADHoRe version 3.0 19 November 2007
+- BUSCO 6.0.0
 # ewdsssssss555555 // tangens
 
 
@@ -306,4 +307,20 @@ Data/Calco1/calco.gff \\
 -ks Results/CDS_KSD/Calco/Calco1_GeneCatalog_CDS_20130417_clean.fasta.tsv.ks.tsv \\
 -o Results/CDS_SYN/Calco \\
 -n 15 > Results/CDS_SYN/Calco/calco_syn.out 2>&1 &
+````
+
+# a bit weirdf order, but lets do a quality check using busco
+
+````bash
+
+conda install -c conda-forge -c bioconda busco=5.8.2
+# BUSCO 5.8.2
+conda install -n busco582 -c bioconda -c conda-forge metaeuk=6.a5d39d9
+
+nohup busco \\
+-i Data/Exigl1/Exigl1_GeneCatalog_proteins_20130529.aa.fasta \\
+-l agaricomycetes_odb12 \\
+-o Results/2_quality/Exig \\
+-m prot \\
+-c 15 -f > Results/2_quality/Exig/exig_busco.out 2>&1 &
 ````

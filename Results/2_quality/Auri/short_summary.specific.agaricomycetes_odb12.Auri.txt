@@ -1,0 +1,17 @@
+# BUSCO version is: 6.0.0 
+# The lineage dataset is: agaricomycetes_odb12 (Creation date: 2025-07-01, number of genomes: 76, number of BUSCOs: 3398)
+# Summarized benchmarking in BUSCO notation for file /home/inf-20-2025/wgd/Data/Aurde1/Aurde1_GeneCatalog_proteins_20110213.aa.fasta
+# BUSCO was run in mode: proteins
+
+	***** Results: *****
+
+	C:91.0%[S:89.1%,D:2.0%],F:2.7%,M:6.3%,n:3398	   
+	3093	Complete BUSCOs (C)			   
+	3026	Complete and single-copy BUSCOs (S)	   
+	67	Complete and duplicated BUSCOs (D)	   
+	91	Fragmented BUSCOs (F)			   
+	214	Missing BUSCOs (M)			   
+	3398	Total BUSCO groups searched		   
+
+Dependencies and versions:
+	hmmsearch: 3.4

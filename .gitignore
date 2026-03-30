@@ -12,3 +12,6 @@
 *.gff
 scaffold_*
 *.tsv
+*.pdf
+*.svg
+*.csv
