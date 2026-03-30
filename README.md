@@ -261,7 +261,7 @@ sed 's/jgi|Exigl1|[0-9]*|//g' Exigl1_GeneCatalog_CDS_20130529.fasta.tsv.ks.tsv >
 Another issue is that not any of the Exidia gff files match the gene names in our cleaned up files (nor the "raw" ones), so I made a pythonscript that creates a .gff file that will match:
 
 ````bash
-python Scripts/gff_make_genes.py
+python Scripts/gff_make_genes.py Data/Calco1/Calco1_all_genes_20130417.gff
 ````
 Now we can run the two wgd syn analysis:
 ````bash
