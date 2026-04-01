@@ -6,6 +6,7 @@
 - diamond version 2.0.6
 - i-ADHoRe version 3.0 19 November 2007
 - BUSCO 6.0.0
+- BBtools 39.81 (3 March 2020)
 # ewdsssssss555555 // tangens
 
 
@@ -161,4 +162,30 @@ nohup busco \\
 -m prot \\
 -c 15 \\
 -f &
+````
+
+# statistics of each assembly using bbtools
+````bash
+# download bbtools
+cd ~/bin
+mkdir BBMap
+cd BBMap
+wget "https://sourceforge.net/projects/bbmap/files/BBMap_39.81b.tar.gz"
+gunzip BBMap_39.81b.tar.gz
+tar -xvf BBMap_39.81b.tar --strip-components=1
+
+# statistics
+cd wgd/Results/3_assembly_stats/
+
+stats.sh \\ # auri
+in=../../Data/Aurde1/Aurde1_AssemblyScaffolds.fasta.gz \\
+out=Auri/auri_stats.txt
+
+stats.sh \\ # exidia
+in=../../Data/Exigl1/Exigl1_AssemblyScaffolds.fasta \\
+out=Exig/exig_stats.txt
+
+stats.sh \\ # calocera
+in=../../Data/Calco1/Calco1_AssemblyScaffolds.fasta.gz \\
+out=Calco/calco_stats.txt
 ````
