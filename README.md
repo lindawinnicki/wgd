@@ -189,3 +189,38 @@ stats.sh \\ # calocera
 in=../../Data/Calco1/Calco1_AssemblyScaffolds.fasta.gz \\
 out=Calco/calco_stats.txt
 ````
+
+# wgd analysis of all three species
+this time, we run a sed to modify the jgi headers prior to analysis, to ease the downstream wgd tools
+````bash
+cd Data
+mkdir Clean_Data
+cd Clean_Data
+mkdir Auri Calco Exig
+sed 's/jgi|Exigl1|[0-9]*|//g' ../Exigl1/Exigl1_GeneCatalog_CDS_20130529.fasta > Exig/Exigl1_GeneCatalog_CDS_20130529_clean.fasta
+
+sed 's/jgi|Aurde1|[0-9]*|//g' ../Aurde1/Aurde1_GeneCatalog_CDS_20110213.fasta > Auri/Aurde1_GeneCatalog_CDS_20110213_clean.fasta
+
+sed 's/jgi|Calco1|[0-9]*|//g' ../Calco1/Calco1_GeneCatalog_CDS_20130417.fasta > Calco/Calco1_GeneCatalog_CDS_20130417_clean.fasta
+````
+
+# wgd viz ELMM 
+````bash
+wgd viz \\
+-d Results/CDS_KSD/Auri/Aurde1_GeneCatalog_CDS_20110213_clean.fasta.tsv.ks.tsv \\ # kmd 
+-o Results/CDS_VIZ/Auri/
+
+nohup wgd viz -d Results/CDS_KSD/Exig/Exigl1_GeneCatalog_CDS_20130529_clean.fasta.tsv.ks.tsv -o Results/CDS_VIZ/Exig/ -n 15 > Results/CDS_VIZ/Exig/exig_viz.out 2>&1 &
+
+nohup wgd viz -d Results/CDS_KSD/Calco/Calco1_GeneCatalog_CDS_20130417_clean.fasta.tsv.ks.tsv -o Results/CDS_VIZ/Calco/ -n 15 > Results/CDS_VIZ/Calco/calco_viz.out 2>&1 &
+````
+
+# cleaning up among the folders, easier for readability
+````bash
+for file in */*/*; do # for every file 1 folder downstream
+shortname=$(echo "$file"|sed 's/GeneCatalog_CDS_[0-9_]*_//g') # remove the "GeneCatalog_CDS_..." from each file name
+if [ "$file" != "$shortname" ]; then # if something changed, make it permanent, else skip
+mv "$file" "$shortname"
+fi
+done
+````
