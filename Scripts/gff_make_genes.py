@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# usage: python gff_make_genes.py input_file output_name 
 import sys
 path_gff = sys.argv[1]
 path_out = sys.argv[2]

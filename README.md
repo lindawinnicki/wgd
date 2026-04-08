@@ -217,10 +217,22 @@ nohup wgd viz -d Results/CDS_KSD/Calco/Calco1_GeneCatalog_CDS_20130417_clean.fas
 
 # cleaning up among the folders, easier for readability
 ````bash
-for file in */*/*; do # for every file 1 folder downstream
-shortname=$(echo "$file"|sed 's/GeneCatalog_CDS_[0-9_]*_//g') # remove the "GeneCatalog_CDS_..." from each file name
-if [ "$file" != "$shortname" ]; then # if something changed, make it permanent, else skip
+# ! run from Results directory !
+for file in */*/*; do # for every file 2 folders downstream (from Results)
+shortname=$(echo "$file"|sed 's/GeneCatalog_CDS_[0-9_]*//g') # remove the "GeneCatalog_CDS_..." from each file name
+if [ "$file" != "$shortname" ]; then # if something could be changed, make it permanent, else skip
 mv "$file" "$shortname"
 fi
 done
+````
+
+# synteny analysis showing homologs too
+````bash
+nohup wgd syn Results/CDS_DMD/Exig/Exigl1_clean.fasta.tsv Scripts/exidia.gff \\
+-ks Results/CDS_KSD/Exig/Exigl1_clean.fasta.tsv.ks.tsv \\ # Ks
+-o Results/CDS_SYN/Exig/With_homolog \\
+--dotsize 5 \\
+--apalpha 1 \\ # default
+--hoalpha 0.6 \\ # now we show homologs too
+-n 15 > Results/CDS_SYN/Exig/exig_synhomo.out 2>&1 &
 ````
