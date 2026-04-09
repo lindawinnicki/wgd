@@ -228,6 +228,12 @@ done
 
 # synteny analysis showing homologs too
 ````bash
+# bigger size regular:
+nohup wgd syn Results/CDS_DMD/Auri/Aurde1_clean.fasta.tsv -a Name -f gene Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3 -ks Results/CDS_KSD/Auri/Aurde1_clean.fasta.tsv.ks.tsv -o Results/CDS_SYN/Auri/Bigger_size --dotsize 5 -n 15 > Results/CDS_SYN/Auri/auri_synbigdot.out 2>&1 &
+
+nohup wgd syn Results/CDS_DMD/Exig/Exigl1_clean.fasta.tsv Scripts/exidia.gff -ks Results/CDS_KSD/Exig/Exigl1_clean.fasta.tsv.ks.tsv -o Results/CDS_SYN/Exig/Bigger_size --dotsize 5 -n 15 > Results/CDS_SYN/Exig/exig_synbigdot.out 2>&1 &
+
+# homologs
 nohup wgd syn Results/CDS_DMD/Exig/Exigl1_clean.fasta.tsv Scripts/exidia.gff \\
 -ks Results/CDS_KSD/Exig/Exigl1_clean.fasta.tsv.ks.tsv \\ # Ks
 -o Results/CDS_SYN/Exig/With_homolog \\
@@ -235,4 +241,16 @@ nohup wgd syn Results/CDS_DMD/Exig/Exigl1_clean.fasta.tsv Scripts/exidia.gff \\
 --apalpha 1 \\ # default
 --hoalpha 0.6 \\ # now we show homologs too
 -n 15 > Results/CDS_SYN/Exig/exig_synhomo.out 2>&1 &
+
+nohup wgd syn \\
+Results/CDS_DMD/Auri/Aurde1_clean.fasta.tsv \\
+-a Name \\
+-f gene \\
+Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3 \\
+-ks Results/CDS_KSD/Auri/Aurde1_clean.fasta.tsv.ks.tsv \\
+-o Results/CDS_SYN/Auri/With_homolog \\
+--dotsize 5 \\
+--apalpha 1 \\
+--hoalpha 0.6 \\
+-n 15 > Results/CDS_SYN/Auri/auri_synhomo.out 2>&1 &
 ````
