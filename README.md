@@ -254,3 +254,107 @@ Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3 \\
 --hoalpha 0.6 \\
 -n 15 > Results/CDS_SYN/Auri/auri_synhomo.out 2>&1 &
 ````
+
+
+So, until now, the params have been set to default values, meaning we have looked for WGDs within two fungal genomes with a software based on WGD events in plants. Now, we will tweak the params somewhat to be more fitting to a fungal search. 
+
+## to create some organisation, lets create a new folder for synteny analysis that distinguishes default runs from the upcoming ones
+
+````bash
+~/wgd/Results$ mkdir SYN_params
+cd SYN_params/
+mkdir mkdir -p Auri/MinGene/5 Calco/MinGene/5 Exig/MinGene/5
+````
+
+## --mingenenum
+because the software is based on plants which have bigger synteny blocks due to less rearrengements (compared to fungi), we lower the default value from 30 to values between 5-15
+
+````bash
+# 5
+nohup wgd syn \\
+Results/CDS_DMD/Exig/Exigl1_clean.fasta.tsv \\
+Scripts/exidia.gff \\
+-ks Results/CDS_KSD/Exig/Exigl1_clean.fasta.tsv.ks.tsv \\
+-o Results/SYN_params/Exig/MinGene/5 \\
+--mingenenum 5 \\
+--dotsize 5 \\
+-n 15 > Results/SYN_params/Exig/MinGene/5/exig.out 2>&1 &
+
+nohup wgd syn \\
+Results/CDS_DMD/Auri/Aurde1_clean.fasta.tsv \\
+-a Name \\
+-f gene \\
+Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3 \\
+-ks Results/CDS_KSD/Auri/Aurde1_clean.fasta.tsv.ks.tsv \\
+-o Results/SYN_params/Auri/MinGene/5 \\
+--mingenenum 5 \\
+--dotsize 5 \\
+-n 15 > Results/SYN_params/Auri/MinGene/5/auri.out 2>&1 &
+
+nohup wgd syn \\
+Results/CDS_DMD/Calco/Calco1_clean.fasta.tsv \\
+Scripts/calco.gff \\
+-ks Results/CDS_KSD/Calco/Calco1_clean.fasta.tsv.ks.tsv \\
+-o Results/SYN_params/Calco/MinGene/5 \\
+--mingenenum 5 \\
+-n 15 > Results/SYN_params/Calco/MinGene/5/calco.out 2>&1 &
+
+# 10
+nohup wgd syn \\
+Results/CDS_DMD/Exig/Exigl1_clean.fasta.tsv \\
+Scripts/exidia.gff \\
+-ks Results/CDS_KSD/Exig/Exigl1_clean.fasta.tsv.ks.tsv \\
+-o Results/SYN_params/Exig/MinGene/10 
+--mingenenum 10 \\
+--dotsize 5 \\
+-n 15 > Results/SYN_params/Exig/MinGene/10/exig.out 2>&1 &
+
+nohup wgd syn \\
+Results/CDS_DMD/Auri/Aurde1_clean.fasta.tsv \\
+-a Name \\
+-f gene \\
+Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3 \\
+-ks Results/CDS_KSD/Auri/Aurde1_clean.fasta.tsv.ks.tsv \\
+-o Results/SYN_params/Auri/MinGene/10 \\
+--mingenenum 10 \\
+--dotsize 5 \\
+-n 15 > Results/SYN_params/Auri/MinGene/10/auri.out 2>&1 &
+
+nohup wgd syn \\
+Results/CDS_DMD/Calco/Calco1_clean.fasta.tsv \\
+Scripts/calco.gff \\
+-ks Results/CDS_KSD/Calco/Calco1_clean.fasta.tsv.ks.tsv \\
+-o Results/SYN_params/Calco/MinGene/10 \\
+--mingenenum 10 \\
+-n 15 > Results/SYN_params/Calco/MinGene/10/calco.out 2>&1
+
+# 15
+nohup wgd syn \\
+Results/CDS_DMD/Exig/Exigl1_clean.fasta.tsv \\
+Scripts/exidia.gff \\
+-ks Results/CDS_KSD/Exig/Exigl1_clean.fasta.tsv.ks.tsv \\
+-o Results/SYN_params/Exig/MinGene/15 \\
+--mingenenum 15 \\
+--dotsize 5 \\
+-n 15 > Results/SYN_params/Exig/MinGene/15/exig.out 2>&1 &
+
+nohup wgd syn \\
+Results/CDS_DMD/Auri/Aurde1_clean.fasta.tsv \\
+-a Name \\
+-f gene \\
+Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3 \\
+-ks Results/CDS_KSD/Auri/Aurde1_clean.fasta.tsv.ks.tsv \\
+-o Results/SYN_params/Auri/MinGene/15 \\
+--mingenenum 15 \\
+--dotsize 5 \\
+-n 15 > Results/SYN_params/Auri/MinGene/15/auri.out 2>&1 &
+
+nohup wgd syn \\
+Results/CDS_DMD/Calco/Calco1_clean.fasta.tsv \\
+Scripts/calco.gff -ks \\
+Results/CDS_KSD/Calco/Calco1_clean.fasta.tsv.ks.tsv \\
+-o Results/SYN_params/Calco/MinGene/15 \\
+--mingenenum 15 \\
+-n 15 > Results/SYN_params/Calco/MinGene/15/calco.out 2>&1
+````
+
