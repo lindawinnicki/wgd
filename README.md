@@ -268,6 +268,8 @@ mkdir mkdir -p Auri/MinGene/5 Calco/MinGene/5 Exig/MinGene/5
 
 ## --mingenenum
 because the software is based on plants which have bigger synteny blocks due to less rearrengements (compared to fungi), we lower the default value from 30 to values between 5-15
+(Hane, J. K., Rouxel, T., Howlett, B. J., Kema, G. H., Goodwin, S. B., & Oliver, R. P. (2011). A novel mode of chromosomal evolution peculiar to filamentous Ascomycete fungi. Genome Biology, 12(5), R45. https://doi.org/10.1186/gb-2011-12-5-r45
+)
 
 ````bash
 # 5
@@ -358,3 +360,55 @@ Results/CDS_KSD/Calco/Calco1_clean.fasta.tsv.ks.tsv \\
 -n 15 > Results/SYN_params/Calco/MinGene/15/calco.out 2>&1
 ````
 
+## --minseglen
+Default is 10.000 basepairs per segmental block, i.e. collinear block. Here we explore a lower boundary, as well as a higher one (5000 and 15000)
+
+## --pairwise for wgd ksd
+````bash
+mkdir -p KSD_params/{Auri,Calco,Exig}
+
+nohup wgd ksd \\
+Results/CDS_DMD/Auri/Aurde1_.fasta.tsv \\
+Data/Aurde1/Aurde1_GeneCatalog_CDS_20110213.fasta \\
+--pairwise \\
+-o Results/KSD_params/Auri \\
+-n 15 > Results/KSD_params/Auri/auri_ksd2.out 2>&1 &
+
+nohup wgd ksd \\
+Results/CDS_DMD/Exig/Exigl1_.fasta.tsv \\
+Data/Exigl1/Exigl1_GeneCatalog_CDS_20130529.fasta \\
+--pairwise \\
+-o Results/KSD_params/Exig/ \\
+-n 15 > Results/KSD_params/Exig/exig_ksd.out 2>&1 &
+
+nohup wgd ksd \\
+Results/CDS_DMD/Calco/Calco1_.fasta.tsv \\
+Data/Calco1/Calco1_GeneCatalog_CDS_20130417.fasta \\
+--pairwise \\
+-o Results/KSD_params/Calco/ \\
+-n 15 > Results/KSD_params/Calco/calco_ksd.out 2>&1 &
+````
+
+### from the above pairwise comaprisons, we now do synteny analysis and see how it differs
+````bash
+nohup wgd syn \\
+Results/CDS_DMD/Auri/Aurde1_clean.fasta.tsv \\
+-a Name \\
+-f gene \\
+Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3 \\
+-ks Results/KSD_params/Auri/Aurde1_.fasta.tsv.ks.tsv \\
+-o Results/KSD_params/Auri/MinGene/5 \\
+--mingenenum 5 \\
+--dotsize 5 \\
+-n 15 > Results/KSD_params/Auri/MinGene/5/auri.out 2>&1 &
+
+
+nohup wgd syn \\
+Results/CDS_DMD/Exig/Exigl1_clean.fasta.tsv \\
+Scripts/exidia.gff \\
+-ks Results/KSD_params/Exig/Exigl1_.fasta.tsv.ks.tsv \\
+-o Results/KSD_params/Exig/MinGene/5 \\
+--mingenenum 5 \\
+--dotsize 5 \\
+-n 15 > Results/KSD_params/Exig/MinGene/5/exig.out 2>&1 &
+````
