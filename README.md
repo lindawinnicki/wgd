@@ -460,4 +460,11 @@ Results/CDS_KSD/Calco/Calco1_clean.fasta.tsv.ks.tsv \\
 --apalpha 1 \\
 --hoalpha 0.6 \\
 -n 15 > Results/SYN_params/Calco/MinGene/10/With_Homolog/calco.out 2>&1
-`````
+````
+# downloading data from ncbi
+````bash
+conda activate ncbi
+conda install -c conda-forge ncbi-datasets-cli
+
+datasets download genome accession GCA_025815895.1 --include gff3,rna,cds,protein,genome,seq-report
+````
