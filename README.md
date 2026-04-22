@@ -9,7 +9,7 @@
 - BBtools 39.81 (3 March 2020)
 # ewdsssssss555555 // tangens
 
-
+# measurements / parameters of *Auricularia subglabra*
 ## Auricularia_delicata.fasta
 - 1531 scaffolds
 - 74920203 bp
@@ -24,12 +24,16 @@ cat Auricularia_delicata.fasta | grep -oP 'N{10,}' | awk '{print length($0)}' | 
 - 74920203 bp
 - 69053340 bp w/o N
 
+# measurements / parameters of *Exidia glandulosa*
+
 ## Exigl1_AssemblyScaffolds.fasta
 - 1727 scaffolds
 - 78171509 bp
 - 71707041 bp w/o N
 - 322147 genes 
   - (Exigl1_all_proteins_20130529.aa.fasta.gz)
+
+# measurements / parameters of *Calocidera cornea*
 
 # wgd
 
@@ -228,12 +232,12 @@ done
 
 # synteny analysis showing homologs too
 ````bash
-# bigger size regular:
+# bigger size regular, NO HOMOLOGS:
 nohup wgd syn Results/CDS_DMD/Auri/Aurde1_clean.fasta.tsv -a Name -f gene Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3 -ks Results/CDS_KSD/Auri/Aurde1_clean.fasta.tsv.ks.tsv -o Results/CDS_SYN/Auri/Bigger_size --dotsize 5 -n 15 > Results/CDS_SYN/Auri/auri_synbigdot.out 2>&1 &
 
 nohup wgd syn Results/CDS_DMD/Exig/Exigl1_clean.fasta.tsv Scripts/exidia.gff -ks Results/CDS_KSD/Exig/Exigl1_clean.fasta.tsv.ks.tsv -o Results/CDS_SYN/Exig/Bigger_size --dotsize 5 -n 15 > Results/CDS_SYN/Exig/exig_synbigdot.out 2>&1 &
 
-# homologs
+# with homologs
 nohup wgd syn Results/CDS_DMD/Exig/Exigl1_clean.fasta.tsv Scripts/exidia.gff \\
 -ks Results/CDS_KSD/Exig/Exigl1_clean.fasta.tsv.ks.tsv \\ # Ks
 -o Results/CDS_SYN/Exig/With_homolog \\
@@ -331,6 +335,7 @@ Scripts/calco.gff \\
 -n 15 > Results/SYN_params/Calco/MinGene/10/calco.out 2>&1
 
 # 15
+#exig
 nohup wgd syn \\
 Results/CDS_DMD/Exig/Exigl1_clean.fasta.tsv \\
 Scripts/exidia.gff \\
@@ -340,6 +345,7 @@ Scripts/exidia.gff \\
 --dotsize 5 \\
 -n 15 > Results/SYN_params/Exig/MinGene/15/exig.out 2>&1 &
 
+#auri
 nohup wgd syn \\
 Results/CDS_DMD/Auri/Aurde1_clean.fasta.tsv \\
 -a Name \\
@@ -351,6 +357,7 @@ Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3 \\
 --dotsize 5 \\
 -n 15 > Results/SYN_params/Auri/MinGene/15/auri.out 2>&1 &
 
+#calco
 nohup wgd syn \\
 Results/CDS_DMD/Calco/Calco1_clean.fasta.tsv \\
 Scripts/calco.gff -ks \\
@@ -367,6 +374,7 @@ Default is 10.000 basepairs per segmental block, i.e. collinear block. Here we e
 ````bash
 mkdir -p KSD_params/{Auri,Calco,Exig}
 
+#auri
 nohup wgd ksd \\
 Results/CDS_DMD/Auri/Aurde1_.fasta.tsv \\
 Data/Aurde1/Aurde1_GeneCatalog_CDS_20110213.fasta \\
@@ -374,6 +382,7 @@ Data/Aurde1/Aurde1_GeneCatalog_CDS_20110213.fasta \\
 -o Results/KSD_params/Auri \\
 -n 15 > Results/KSD_params/Auri/auri_ksd2.out 2>&1 &
 
+#exig
 nohup wgd ksd \\
 Results/CDS_DMD/Exig/Exigl1_.fasta.tsv \\
 Data/Exigl1/Exigl1_GeneCatalog_CDS_20130529.fasta \\
@@ -381,6 +390,7 @@ Data/Exigl1/Exigl1_GeneCatalog_CDS_20130529.fasta \\
 -o Results/KSD_params/Exig/ \\
 -n 15 > Results/KSD_params/Exig/exig_ksd.out 2>&1 &
 
+#calco
 nohup wgd ksd \\
 Results/CDS_DMD/Calco/Calco1_.fasta.tsv \\
 Data/Calco1/Calco1_GeneCatalog_CDS_20130417.fasta \\
@@ -410,5 +420,44 @@ Scripts/exidia.gff \\
 -o Results/KSD_params/Exig/MinGene/5 \\
 --mingenenum 5 \\
 --dotsize 5 \\
--n 15 > Results/KSD_params/Exig/MinGene/5/exig.out 2>&1 &
+-n 15 > Results/KSD_params/Exig/MinGene/5/exig.out 2>&1 & # be aware where it ends up!
 ````
+
+# with homologs too for 10 min gene synteny
+
+````bash
+# exig
+nohup wgd syn Results/CDS_DMD/Exig/Exigl1_clean.fasta.tsv Scripts/exidia.gff \\
+-ks Results/CDS_KSD/Exig/Exigl1_clean.fasta.tsv.ks.tsv \\
+-o Results/SYN_params/Exig/MinGene/10/With_Homolog \\
+--dotsize 5 \\
+--mingenenum 10 \\
+--apalpha 1 \\
+--hoalpha 0.6 \\
+-n 15 > Results/SYN_params/Exig/MinGene/10/With_Homolog/exig_synhomo.out 2>&1 &
+
+#auri
+nohup wgd syn \\
+Results/CDS_DMD/Auri/Aurde1_clean.fasta.tsv \\
+-a Name \\
+-f gene \\
+Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3 \\
+-ks Results/KSD_params/Auri/Aurde1_.fasta.tsv.ks.tsv \\
+-o Results/SYN_params/Auri/MinGene/10 \\
+--mingenenum 10 \\
+--dotsize 5 \\
+--apalpha 1 \\
+--hoalpha 0.6 \\
+-n 15 > Results/SYN_params/Auri/MinGene/10/auri_synhomo.out 2>&1 &
+
+#calco
+nohup wgd syn \\
+Results/CDS_DMD/Calco/Calco1_clean.fasta.tsv \\
+Scripts/calco.gff -ks \\
+Results/CDS_KSD/Calco/Calco1_clean.fasta.tsv.ks.tsv \\
+-o Results/SYN_params/Calco/MinGene/10/With_Homolog \\
+--mingenenum 10 \\
+--apalpha 1 \\
+--hoalpha 0.6 \\
+-n 15 > Results/SYN_params/Calco/MinGene/10/With_Homolog/calco.out 2>&1
+`````
