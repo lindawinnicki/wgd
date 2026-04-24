@@ -333,6 +333,15 @@ Scripts/calco.gff \\
 -o Results/SYN_params/Calco/MinGene/10 \\
 --mingenenum 10 \\
 -n 15 > Results/SYN_params/Calco/MinGene/10/calco.out 2>&1
+# bigger size
+nohup wgd syn \\
+Results/CDS_DMD/Calco/Calco1_clean.fasta.tsv \\
+Scripts/calco.gff \\
+-ks Results/CDS_KSD/Calco/Calco1_clean.fasta.tsv.ks.tsv \\
+-o Results/SYN_params/Calco/MinGene/10/BigDot/ \\
+--mingenenum 10 \\
+--dotsize 10 \\
+-n 15 > Results/SYN_params/Calco/MinGene/10/calco_dotsize.out 2>&1 &
 
 # 15
 #exig
@@ -467,4 +476,19 @@ conda activate ncbi
 conda install -c conda-forge ncbi-datasets-cli
 
 datasets download genome accession GCA_025815895.1 --include gff3,rna,cds,protein,genome,seq-report
+````
+## dmd (gene families)
+````bash
+nohup wgd dmd \\
+ncbi_dataset/data/GCA_018924745.1/cds_from_genomic.fna \\
+-o ncbi_dataset/Results_Ncbi/DMD/ \\
+-n 15 > ncbi_dataset/Results_Ncbi/DMD/ncbi_dmd.out 2>&1 &
+````
+## ksd
+````bash
+nohup wgd ksd \\
+ncbi_dataset/Results_Ncbi/DMD/cds_from_genomic.fna.tsv \\
+ncbi_dataset/data/GCA_018924745.1/cds_from_genomic.fna \\
+-o ncbi_dataset/Results_Ncbi/KSD/ \\
+-n 15 > ncbi_dataset/Results_Ncbi/KSD/ncbi_ksd.out 2>&1 &
 ````
