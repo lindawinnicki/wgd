@@ -15,3 +15,7 @@ scaffold_*
 *.pdf
 *.svg
 *.csv
+*.cds
+*.png
+*.txt
+*.conf

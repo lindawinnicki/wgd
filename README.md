@@ -492,3 +492,26 @@ ncbi_dataset/data/GCA_018924745.1/cds_from_genomic.fna \\
 -o ncbi_dataset/Results_Ncbi/KSD/ \\
 -n 15 > ncbi_dataset/Results_Ncbi/KSD/ncbi_ksd.out 2>&1 &
 ````
+
+# interspecific analysis
+````bash
+# because exidia and calcocera share names, we get a duplication error thrown by i-ADHoRE some steps later on, so we just add an id before every name for exidia
+awk '$3=="gene" {gsub(/ID=/, "ID=SP2_")} {print}' Scripts/exidia.gff > Scripts/exidia_prefixed.gff # gff 
+
+awk '$3=="gene" {gsub(/^>^/, ">SP2_")} {print}' Data/Clean_Data/Exig/Exigl1_GeneCatalog_CDS_20130529_clean.fasta > Data/Clean_Data/Exig/Inter/Exigl1_GeneCatalog_CDS_20130529_inter.fasta # cds
+
+# dmd
+nohup wgd dmd \\
+-oo \\ # orthoinfer
+-oi Data/Clean_Data/Auri/Aurde1_GeneCatalog_CDS_20110213_clean.fasta Data/Clean_Data/Exig/Exigl1_GeneCatalog_CDS_20130529_clean.fasta Data/Clean_Data/Calco/Calco1_GeneCatalog_CDS_20130417_clean.fasta \\
+-o Results/InterSpecific/DMD \\
+-n 15 > Results/InterSpecific/DMD/orthoinfer.out 2>&1 &
+
+# inter ksd
+nohup wgd ksd \\
+Results/InterSpecific/DMD/Orthogroups.sp.tsv \\
+Data/Clean_Data/Auri/Aurde1_GeneCatalog_CDS_20110213_clean.fasta Data/Clean_Data/Exig/Exigl1_GeneCatalog_CDS_20130529_clean.fasta Data/Clean_Data/Calco/Calco1_GeneCatalog_CDS_20130417_clean.fasta \\
+-o Results/InterSpecific/KSD \\
+-n 15 > Results/InterSpecific/KSD/inter_ksd.out 2>&1 &
+
+````
