@@ -9,10 +9,10 @@ df_cal <- read.csv("Results/SYN_params/Exig/MinGene/10/Segprofile.csv")
 df_aur$species <- "auri"
 df_cal$species <- "calco"
 df_exi$species <- "exid"
-df_all <- bind_rows(df_aur, df_cal, df_exi)
+df_all <- bind_rows(df_aur, df_cal, df_exi) # merge
 
 
-df_long <- df_all %>%
+df_long <- df_all %>% # longer dataframe 
   pivot_longer(
     cols = ends_with(".fasta"),
     names_to = "genomes",
@@ -21,14 +21,17 @@ df_long <- df_all %>%
   filter(!is.na(depth))
 
 df_counts <- df_long %>% count(species, depth)
+df_counts$species <- factor(df_counts$species)
+df_counts$species2 <- forcats::fct_relevel(df_counts$species, "calco", after = Inf) # reorder
+# max_depth <- max(df_counts$depth)
 
-max_depth <- max(df_counts$depth)
 
 pdf(file = "Scripts/Plots/syndepth_plot.pdf", 6, 5)
-ggplot(df_counts, aes(x = factor(depth), y = n, fill = species)) +
+ggplot(df_counts, aes(x = factor(depth), y = n, fill = species2)) +
   geom_col(
-    position = position_dodge2(width = 0.8
-      , preserve = "single")
+    , position = position_dodge2(width = 0.8
+      , preserve = "single"
+    )
   ) +
   scale_x_discrete(drop = FALSE,
     labels = c("1:1", "2:2", "3:3")
@@ -36,8 +39,8 @@ ggplot(df_counts, aes(x = factor(depth), y = n, fill = species)) +
   scale_fill_manual(
   values = wes_palette("FantasticFox1", n = 3)
   , labels = c("Auricularia subglabra"
-  , "Calocera cornea"
-  , "Exidia globulosa")
+  , "Exidia globulosa"
+  , "Calocera cornea")
   ) +
   labs(x = "Syntenic Depth"
   , y = "# of Multiplicons"

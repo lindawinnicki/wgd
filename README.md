@@ -514,4 +514,17 @@ Data/Clean_Data/Auri/Aurde1_GeneCatalog_CDS_20110213_clean.fasta Data/Clean_Data
 -o Results/InterSpecific/KSD \\
 -n 15 > Results/InterSpecific/KSD/inter_ksd.out 2>&1 &
 
+nohup wgd syn \\
+Results/InterSpecific/DMD/Orthogroups.sp.tsv \\
+-ks Results/InterSpecific/KSD/Orthogroups.sp.tsv.ks.tsv \\
+Scripts/calco.gff \\
+Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3 \\
+Scripts/exidia.gff \\
+--additionalgffinfo 'gene;ID' \\
+--additionalgffinfo 'gene;Name' \\ # auri
+--additionalgffinfo 'gene;ID' \\
+--dotsize 7 \\
+--mingenenum 10 \\
+-o Results/InterSpecific/SYN \\
+-n 15 > Results/InterSpecific/SYN/inter_syn.out 2>&1 &
 ````

@@ -21,3 +21,6 @@ scaffold_*
 *.conf
 *.cds
 *.pep
+*.log
+*_obd12
+*.json
