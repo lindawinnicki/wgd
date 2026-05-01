@@ -498,19 +498,35 @@ ncbi_dataset/data/GCA_018924745.1/cds_from_genomic.fna \\
 # because exidia and calcocera share names, we get a duplication error thrown by i-ADHoRE some steps later on, so we just add an id before every name for exidia
 awk '$3=="gene" {gsub(/ID=/, "ID=SP2_")} {print}' Scripts/exidia.gff > Scripts/exidia_prefixed.gff # gff 
 
-awk '$3=="gene" {gsub(/^>^/, ">SP2_")} {print}' Data/Clean_Data/Exig/Exigl1_GeneCatalog_CDS_20130529_clean.fasta > Data/Clean_Data/Exig/Inter/Exigl1_GeneCatalog_CDS_20130529_inter.fasta # cds
+sed 's/^>/^>SP2_/' Data/Clean_Data/Exig/Exigl1_GeneCatalog_CDS_20130529_clean.fasta > Data/Clean_Data/Exig/Inter/Exigl1_GeneCatalog_CDS_20130529_inter.fasta # cds exig
+
+sed 's/^>/>SP1_/' Data/Clean_Data/Auri/Aurde1_GeneCatalog_CDS_20110213_clean.fasta > Data/Clean_Data/Auri/Inter/Aurde1_GeneCatalog_CDS_20110213_inter.fasta # cds auri
+
+awk '$3=="gene" {gsub(/Name=/, "Name=SP1_")} {print}' Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3 > Scripts/auri_prefixed.gff
 
 # dmd
 nohup wgd dmd \\
 -oo \\ # orthoinfer
--oi Data/Clean_Data/Auri/Aurde1_GeneCatalog_CDS_20110213_clean.fasta Data/Clean_Data/Exig/Exigl1_GeneCatalog_CDS_20130529_clean.fasta Data/Clean_Data/Calco/Calco1_GeneCatalog_CDS_20130417_clean.fasta \\
+-oi Data/Clean_Data/Auri/Inter/Aurde1_GeneCatalog_CDS_20110213_inter.fasta Data/Clean_Data/Exig/Inter/Exigl1_GeneCatalog_CDS_20130529_inter.fasta Data/Clean_Data/Calco/Calco1_GeneCatalog_CDS_20130417_clean.fasta \\
 -o Results/InterSpecific/DMD \\
 -n 15 > Results/InterSpecific/DMD/orthoinfer.out 2>&1 &
+
+# from this file: Results/InterSpecific/DMD/Orthogroups.genecount.tsv
+#       1 CopyType
+#  18768 multi-copy
+#   1904 single-copy
+
+# from tmp file with all species having their own unique gene names: Results/InterSpecific/DMD/tmp/Orthogroups.genecount.tsv
+#      1 CopyType
+#  18648 multi-copy
+#   2024 single-copy
 
 # inter ksd
 nohup wgd ksd \\
 Results/InterSpecific/DMD/Orthogroups.sp.tsv \\
-Data/Clean_Data/Auri/Aurde1_GeneCatalog_CDS_20110213_clean.fasta Data/Clean_Data/Exig/Exigl1_GeneCatalog_CDS_20130529_clean.fasta Data/Clean_Data/Calco/Calco1_GeneCatalog_CDS_20130417_clean.fasta \\
+Data/Clean_Data/Auri/Aurde1_GeneCatalog_CDS_20110213_clean.fasta \\
+Data/Clean_Data/Exig/Exigl1_GeneCatalog_CDS_20130529_clean.fasta \\
+Data/Clean_Data/Calco/Calco1_GeneCatalog_CDS_20130417_clean.fasta \\
 -o Results/InterSpecific/KSD \\
 -n 15 > Results/InterSpecific/KSD/inter_ksd.out 2>&1 &
 
@@ -528,3 +544,10 @@ Scripts/exidia.gff \\
 -o Results/InterSpecific/SYN \\
 -n 15 > Results/InterSpecific/SYN/inter_syn.out 2>&1 &
 ````
+
+
+# tmp now every single one has its own unique id
+
+nohup wgd dmd -oo -oi Data/Clean_Data/Auri/Inter/Aurde1_GeneCatalog_CDS_20110213_inter.fasta Data/Clean_Data/Exig/Inter/Exigl1_GeneCatalog_CDS_20130529_inter.fasta Data/Clean_Data/Calco/Calco1_GeneCatalog_CDS_20130417_clean.fasta -o Results/InterSpecific/DMD/tmp -n 15 > Results/InterSpecific/DMD/tmp/orthoinfer.out 2>&1 &
+
+nohup wgd ksd Results/InterSpecific/DMD/tmp/Orthogroups.sp.tsv Data/Clean_Data/Auri/Inter/Aurde1_GeneCatalog_CDS_20110213_inter.fasta Data/Clean_Data/Exig/Inter/Exigl1_GeneCatalog_CDS_20130529_inter.fasta Data/Clean_Data/Calco/Calco1_GeneCatalog_CDS_20130417_clean.fasta -o Results/InterSpecific/KSD/tmp -n 15 > Results/InterSpecific/KSD/tmp/inter_ksd.out 2>&1 &

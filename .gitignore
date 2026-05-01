@@ -24,3 +24,7 @@ scaffold_*
 *.log
 *_obd12
 *.json
+run_agaricomycetes_odb12/
+busco_downloads/
+ncbi_dataset/
+wgd_from_currentbiology/
