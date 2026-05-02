@@ -524,30 +524,38 @@ nohup wgd dmd \\
 # inter ksd
 nohup wgd ksd \\
 Results/InterSpecific/DMD/Orthogroups.sp.tsv \\
-Data/Clean_Data/Auri/Aurde1_GeneCatalog_CDS_20110213_clean.fasta \\
-Data/Clean_Data/Exig/Exigl1_GeneCatalog_CDS_20130529_clean.fasta \\
+Clean_Data/Auri/Inter/Aurde1_GeneCatalog_CDS_20110213_inter.fasta \\
+Clean_Data/Exig/Inter/Exigl1_GeneCatalog_CDS_20130529_inter.fasta \\
 Data/Clean_Data/Calco/Calco1_GeneCatalog_CDS_20130417_clean.fasta \\
 -o Results/InterSpecific/KSD \\
 -n 15 > Results/InterSpecific/KSD/inter_ksd.out 2>&1 &
 
+# inter synteny
 nohup wgd syn \\
 Results/InterSpecific/DMD/Orthogroups.sp.tsv \\
 -ks Results/InterSpecific/KSD/Orthogroups.sp.tsv.ks.tsv \\
 Scripts/calco.gff \\
-Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3 \\
-Scripts/exidia.gff \\
---additionalgffinfo 'gene;ID' \\
---additionalgffinfo 'gene;Name' \\ # auri
---additionalgffinfo 'gene;ID' \\
+Scripts/auri2_prefixed.gff \\
+Scripts/exidia_prefixed.gff \\
 --dotsize 7 \\
 --mingenenum 10 \\
 -o Results/InterSpecific/SYN \\
 -n 15 > Results/InterSpecific/SYN/inter_syn.out 2>&1 &
+
+# inter viz reweigth
+wgd viz -d Results/InterSpecific/KSD/Orthogroups.sp.tsv.ks.tsv \\ # family
+-fa Exigl1_GeneCatalog_CDS_20130529_inter.fasta \\ # focal species
+-ap Results/InterSpecific/SYN/tmp/iadhore-out/anchorpoints.txt \\
+-sp Data/speciestree.nw \\ #(auri,exidia(cornea))
+-o Results/InterSpecific/VIZ \\
+--plotelmm \\
+--plotapgmm \\
+--reweight \\
+-n 15 > Results/InterSpecific/VIZ/viz_reweigth.out 2>&1 &
 ````
 
 
 # tmp now every single one has its own unique id
 
-nohup wgd dmd -oo -oi Data/Clean_Data/Auri/Inter/Aurde1_GeneCatalog_CDS_20110213_inter.fasta Data/Clean_Data/Exig/Inter/Exigl1_GeneCatalog_CDS_20130529_inter.fasta Data/Clean_Data/Calco/Calco1_GeneCatalog_CDS_20130417_clean.fasta -o Results/InterSpecific/DMD/tmp -n 15 > Results/InterSpecific/DMD/tmp/orthoinfer.out 2>&1 &
 
-nohup wgd ksd Results/InterSpecific/DMD/tmp/Orthogroups.sp.tsv Data/Clean_Data/Auri/Inter/Aurde1_GeneCatalog_CDS_20110213_inter.fasta Data/Clean_Data/Exig/Inter/Exigl1_GeneCatalog_CDS_20130529_inter.fasta Data/Clean_Data/Calco/Calco1_GeneCatalog_CDS_20130417_clean.fasta -o Results/InterSpecific/KSD/tmp -n 15 > Results/InterSpecific/KSD/tmp/inter_ksd.out 2>&1 &
+nohup wgd syn Results/InterSpecific/DMD/tmp/Orthogroups.sp.tsv -ks Results/InterSpecific/KSD/tmp/Orthogroups.sp.tsv.ks.tsv Scripts/calco.gff Scripts/auri2_prefixed.gff Scripts/exidia_prefixed.gff --dotsize 7 --mingenenum 10 -o Results/InterSpecific/SYN/tmp -n 15 > Results/InterSpecific/SYN/tmp/inter_syn.out 2>&1 &
