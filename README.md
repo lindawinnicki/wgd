@@ -511,16 +511,13 @@ nohup wgd dmd \\
 -o Results/InterSpecific/DMD \\
 -n 15 > Results/InterSpecific/DMD/orthoinfer.out 2>&1 &
 
-# from this file: Results/InterSpecific/DMD/Orthogroups.genecount.tsv
-#       1 CopyType
-#  18768 multi-copy
-#   1904 single-copy
+````
+### from tmp file with all species having their own unique gene names: Results/InterSpecific/DMD/tmp/Orthogroups.genecount.tsv
+  - 1 CopyType
+  - 18648 multi-copy
+  - 2024 single-copy
 
-# from tmp file with all species having their own unique gene names: Results/InterSpecific/DMD/tmp/Orthogroups.genecount.tsv
-#      1 CopyType
-#  18648 multi-copy
-#   2024 single-copy
-
+````bash
 # inter ksd
 nohup wgd ksd \\
 Results/InterSpecific/DMD/Orthogroups.sp.tsv \\
@@ -545,7 +542,7 @@ Scripts/exidia_prefixed.gff \\
 # inter viz reweigth
 wgd viz -d Results/InterSpecific/KSD/Orthogroups.sp.tsv.ks.tsv \\ # family
 -fa Exigl1_GeneCatalog_CDS_20130529_inter.fasta \\ # focal species
--ap Results/InterSpecific/SYN/tmp/iadhore-out/anchorpoints.txt \\
+-ap Results/InterSpecific/SYN/iadhore-out/anchorpoints.txt \\
 -sp Data/speciestree.nw \\ #(auri,exidia(cornea))
 -o Results/InterSpecific/VIZ \\
 --plotelmm \\
@@ -553,9 +550,3 @@ wgd viz -d Results/InterSpecific/KSD/Orthogroups.sp.tsv.ks.tsv \\ # family
 --reweight \\
 -n 15 > Results/InterSpecific/VIZ/viz_reweigth.out 2>&1 &
 ````
-
-
-# tmp now every single one has its own unique id
-
-
-nohup wgd syn Results/InterSpecific/DMD/tmp/Orthogroups.sp.tsv -ks Results/InterSpecific/KSD/tmp/Orthogroups.sp.tsv.ks.tsv Scripts/calco.gff Scripts/auri2_prefixed.gff Scripts/exidia_prefixed.gff --dotsize 7 --mingenenum 10 -o Results/InterSpecific/SYN/tmp -n 15 > Results/InterSpecific/SYN/tmp/inter_syn.out 2>&1 &
