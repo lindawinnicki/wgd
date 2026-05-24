@@ -15,6 +15,8 @@
 - 74920203 bp
 - 69053340 bp w/o N
 - 169070 genes
+## GFF 
+- 1425 scaffolds (cut -f1 Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3|grep -v "#"|sort|uniq|wc -l)
 ````bash N DISTRIBUTION
 cat Auricularia_delicata.fasta | grep -oP 'N{10,}' | awk '{print length($0)}' | sort -n | uniq -c
 ````
@@ -32,8 +34,12 @@ cat Auricularia_delicata.fasta | grep -oP 'N{10,}' | awk '{print length($0)}' | 
 - 71707041 bp w/o N
 - 322147 genes 
   - (Exigl1_all_proteins_20130529.aa.fasta.gz)
+## GFF
+- 1727 scaffolds
 
 # measurements / parameters of *Calocidera cornea*
+## GFF 
+- 545 scaffolds
 
 # wgd
 
