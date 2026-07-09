@@ -338,7 +338,9 @@ Scripts/calco.gff \\
 -ks Results/CDS_KSD/Calco/Calco1_clean.fasta.tsv.ks.tsv \\
 -o Results/SYN_params/Calco/MinGene/10 \\
 --mingenenum 10 \\
+--dotsize 5 \\
 -n 15 > Results/SYN_params/Calco/MinGene/10/calco.out 2>&1
+
 # bigger size
 nohup wgd syn \\
 Results/CDS_DMD/Calco/Calco1_clean.fasta.tsv \\
@@ -346,7 +348,7 @@ Scripts/calco.gff \\
 -ks Results/CDS_KSD/Calco/Calco1_clean.fasta.tsv.ks.tsv \\
 -o Results/SYN_params/Calco/MinGene/10/BigDot/ \\
 --mingenenum 10 \\
---dotsize 10 \\
+--dotsize 5 \\
 -n 15 > Results/SYN_params/Calco/MinGene/10/calco_dotsize.out 2>&1 &
 
 # 15
@@ -382,8 +384,6 @@ Results/CDS_KSD/Calco/Calco1_clean.fasta.tsv.ks.tsv \\
 -n 15 > Results/SYN_params/Calco/MinGene/15/calco.out 2>&1
 ````
 
-## --minseglen
-Default is 10.000 basepairs per segmental block, i.e. collinear block. Here we explore a lower boundary, as well as a higher one (5000 and 15000)
 
 ## --pairwise for wgd ksd
 ````bash
@@ -448,7 +448,7 @@ nohup wgd syn Results/CDS_DMD/Exig/Exigl1_clean.fasta.tsv Scripts/exidia.gff \\
 --dotsize 5 \\
 --mingenenum 10 \\
 --apalpha 1 \\
---hoalpha 0.6 \\
+--hoalpha 0.3 \\
 -n 15 > Results/SYN_params/Exig/MinGene/10/With_Homolog/exig_synhomo.out 2>&1 &
 
 #auri
@@ -462,19 +462,20 @@ Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3 \\
 --mingenenum 10 \\
 --dotsize 5 \\
 --apalpha 1 \\
---hoalpha 0.6 \\
+--hoalpha 0.3 \\
 -n 15 > Results/SYN_params/Auri/MinGene/10/auri_synhomo.out 2>&1 &
 
 #calco
 nohup wgd syn \\
 Results/CDS_DMD/Calco/Calco1_clean.fasta.tsv \\
-Scripts/calco.gff -ks \\
-Results/CDS_KSD/Calco/Calco1_clean.fasta.tsv.ks.tsv \\
+Scripts/calco.gff \\
+-ks Results/CDS_KSD/Calco/Calco1_clean.fasta.tsv.ks.tsv \\
 -o Results/SYN_params/Calco/MinGene/10/With_Homolog \\
 --mingenenum 10 \\
+--dotsize 5 \\
 --apalpha 1 \\
---hoalpha 0.6 \\
--n 15 > Results/SYN_params/Calco/MinGene/10/With_Homolog/calco.out 2>&1
+--hoalpha 0.3 \\
+-n 15 > Results/SYN_params/Calco/MinGene/10/With_Homolog/calco.out 2>&1 &
 ````
 # downloading data from ncbi
 ````bash
@@ -555,4 +556,140 @@ wgd viz -d Results/InterSpecific/KSD/Orthogroups.sp.tsv.ks.tsv \\ # family
 --plotapgmm \\
 --reweight \\
 -n 15 > Results/InterSpecific/VIZ/viz_reweigth.out 2>&1 &
+````
+
+
+
+
+
+## 25th may 2025, i will just do a quick test to see how the results look if we use more of the scaffolds
+````bash
+# auri
+nohup wgd syn \\
+Results/CDS_DMD/Auri/Aurde1_clean.fasta.tsv \\
+-a Name \\
+-f gene \\
+Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3 \\
+-ks Results/KSD_params/Auri/Aurde1_.fasta.tsv.ks.tsv \\
+-o Results/KSD_params/Auri/MinSeg/150 \\
+--mingenenum 10 \\
+--minlen -5 # 50% of longest scaffolds, just to see
+--dotsize 5 \\
+-n 15 > Results/KSD_params/Auri/MinSeg/50/auri.out 2>&1 &
+
+# exig
+nohup wgd syn \\
+Results/CDS_DMD/Exig/Exigl1_clean.fasta.tsv \\
+Scripts/exidia.gff \\
+-ks Results/KSD_params/Exig/Exigl1_.fasta.tsv.ks.tsv \\
+-o Results/KSD_params/Exig/MinSeg/50 \\
+--mingenenum 10 \\
+--minlen -5 \\
+--dotsize 5 \\
+-n 15 > Results/KSD_params/Exig/MinSeg/50/exig.out 2>&1 &
+
+# calco
+nohup wgd syn \\
+Results/CDS_DMD/Calco/Calco1_.fasta.tsv \\
+-ks Results/KSD_params/Calco/Calco1_.fasta.tsv.ks.tsv \\
+-o Results/KSD_params/Calco/MinSeg/50 \\
+--mingenenum 10 \\
+--minlen -5 \\
+--dotsize 5 \\
+-n 15 > Results/KSD_params/Calco/MinSeg/50/calco_ksd.out 2>&1 &
+
+# auri 100%
+nohup wgd syn \\
+Results/CDS_DMD/Auri/Aurde1_clean.fasta.tsv \\
+-a Name \\
+-f gene \\
+Data/Aurde1/Aurde1_GeneModels_FilteredModels1.gff3 \\
+-ks Results/KSD_params/Auri/Aurde1_.fasta.tsv.ks.tsv \\
+-o Results/KSD_params/Auri/MinSeg/100 \\
+--mingenenum 10 \\
+--minlen -10 # 100% of longest scaffolds, still min length of 10000
+--dotsize 5 \\
+-n 15 > Results/KSD_params/Auri/MinSeg/100/auri.out 2>&1 &
+
+# exig 100%
+nohup wgd syn \\
+Results/CDS_DMD/Exig/Exigl1_clean.fasta.tsv \\
+Scripts/exidia.gff \\
+-ks Results/KSD_params/Exig/Exigl1_.fasta.tsv.ks.tsv \\
+-o Results/KSD_params/Exig/MinSeg/100 \\
+--mingenenum 10 \\
+--minlen -10 \\
+--dotsize 5 \\
+-n 15 > Results/KSD_params/Exig/MinSeg/100/exig.out 2>&1 &
+````
+
+
+## using wgd viz to recreate the plots but with custom color
+`````
+# exidia
+nohup wgd viz \\
+-d Results/CDS_KSD/Exig/Exigl1_clean.fasta.tsv.ks.tsv
+--segments Results/SYN_params/Exig/MinGene/10/iadhore-out/segments.txt \\
+--anchorpoints Results/SYN_params/Exig/MinGene/10/iadhore-out/anchorpoints.txt \\
+--multiplicon Results/SYN_params/Exig/MinGene/10/iadhore-out/multiplicon.txt \\
+--genetable Results/SYN_params/Exig/MinGene/10/gene-table.csv \\
+--mingenenum 10 \\
+--plotapgmm \\
+--plotelmm \\
+--dotsize 5 \\
+-o Results/SYN_params/Exig/MinGene/10/Red_and_Blue \\ # output
+-n 15 > Results/SYN_params/Exig/MinGene/10/Red_and_Blue/exi.out 2>&1 &
+#auri
+
+nohup wgd viz \\
+-ks Results/CDS_KSD/Auri/Aurde1_clean.fasta.tsv.ks.tsv \\
+--segments Results/SYN_params/Auri/MinGene/10/iadhore-out/segments.txt \\
+--anchorpoints Results/SYN_params/Auri/MinGene/10/iadhore-out/anchorpoints.txt \\
+--multiplicon Results/SYN_params/Auri/MinGene/10/iadhore-out/multiplicon.txt \\
+--genetable Results/SYN_params/Auri/MinGene/10/gene-table.csv \\
+--mingenenum 10 \\
+--plotapgmm \\
+--plotelmm \\
+--dotsize 5 \\
+-o Results/SYN_params/Auri/MinGene/10/Red_and_Blue \\ # output
+-n 15 > Results/SYN_params/Auri/MinGene/10/Red_and_Blue/auri.out 2>&1 &
+
+# calco
+nohup wgd viz \\
+-d Results/CDS_KSD/Calco/Calco1_clean.fasta.tsv.ks.tsv \\
+--segments Results/SYN_params/Calco/MinGene/10/iadhore-out/segments.txt \\
+--anchorpoints Results/SYN_params/Calco/MinGene/10/iadhore-out/anchorpoints.txt d
+--multiplicon Results/SYN_params/Calco/MinGene/10/iadhore-out/multiplicon.txt \\
+--genetable Results/SYN_params/Calco/MinGene/10/gene-table.csv \\
+--mingenenum 10 \\
+--plotapgmm \\
+--plotelmm \\
+--dotsize 5 \\
+-o Results/SYN_params/Calco/MinGene/10/Red_and_Blue \\
+-n 15 > Results/SYN_params/Calco/MinGene/10/Red_and_Blue/calco.out 2>&1 &
+
+`````
+# busco tables of duplications
+````bash
+cat Results/2_quality/Exig/run_agaricomycetes_odb12/full_table.tsv|grep -v "#"|cut -f2,3,4,5,6,7|grep "Duplicated" > Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated.tsv
+cat Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated.tsv|sed 's/jgi|Exigl1|[0-9]*|//g' > Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated_shortgenes.tsv
+cat Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated.tsv|cut -f2 > Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated_names.tsv
+
+awk 'NR==FNR{ids[$1]=1; next} /^>/{header=substr($1,2); keep=(header in ids)} keep' Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated_names.tsv Data/Exigl1/Exigl1_all_proteins_20130529.aa.fasta > Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated_buscos.aa.fasta
+
+
+cat Results/2_quality/Auri/run_agaricomycetes_odb12/full_table.tsv|grep -v "#"|cut -f2,3,4,5,6,7|grep "Duplicated" > Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated.tsv
+cat Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated.tsv|sed 's/jgi|Aurde1|[0-9]*|//g' > Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated_shortgenes.tsv
+cat Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated.tsv|cut -f2 > Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated_names.tsv
+
+awk 'NR==FNR{ids[$1]=1; next} /^>/{header=substr($1,2); keep=(header in ids)} keep' Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated_names.tsv Data/Aurde1/Aurde1_GeneCatalog_proteins_20110213.aa.fasta > Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated_buscos.aa.fasta
+
+
+cat Results/2_quality/Calco/run_basidiomycota_odb12/full_table.tsv|grep -v "#"|cut -f2,3,4,5,6,7|grep "Duplicated" > Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated.tsv
+cat Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated.tsv|sed 's/jgi|Calco1
+|[0-9]*|//g' > Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated_shortgenes.tsv
+cat Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated.tsv|cut -f2 > Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated_names.tsv
+
+awk 'NR==FNR{ids[$1]=1; next} /^>/{header=substr($1,2); keep=(header in ids)} keep' Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated_names.tsv Data/Calco1/Calco1_GeneCatalog_proteins_20130417.aa.fasta > Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated_buscos.aa.fasta
+
 ````
