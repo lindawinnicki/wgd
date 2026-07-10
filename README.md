@@ -7,6 +7,7 @@
 - i-ADHoRe version 3.0 19 November 2007
 - BUSCO 6.0.0
 - BBtools 39.81 (3 March 2020)
+
 # ewdsssssss555555 // tangens
 
 # measurements / parameters of *Auricularia subglabra*
@@ -563,7 +564,7 @@ wgd viz -d Results/InterSpecific/KSD/Orthogroups.sp.tsv.ks.tsv \\ # family
 
 
 ## 25th may 2025, i will just do a quick test to see how the results look if we use more of the scaffolds
-````bash
+```bash
 # auri
 nohup wgd syn \\
 Results/CDS_DMD/Auri/Aurde1_clean.fasta.tsv \\
@@ -621,11 +622,11 @@ Scripts/exidia.gff \\
 --minlen -10 \\
 --dotsize 5 \\
 -n 15 > Results/KSD_params/Exig/MinSeg/100/exig.out 2>&1 &
-````
+```
 
 
 ## using wgd viz to recreate the plots but with custom color
-`````
+```
 # exidia
 nohup wgd viz \\
 -d Results/CDS_KSD/Exig/Exigl1_clean.fasta.tsv.ks.tsv
@@ -668,28 +669,66 @@ nohup wgd viz \\
 -o Results/SYN_params/Calco/MinGene/10/Red_and_Blue \\
 -n 15 > Results/SYN_params/Calco/MinGene/10/Red_and_Blue/calco.out 2>&1 &
 
-`````
+```
 # busco tables of duplications
 ````bash
-cat Results/2_quality/Exig/run_agaricomycetes_odb12/full_table.tsv|grep -v "#"|cut -f2,3,4,5,6,7|grep "Duplicated" > Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated.tsv
-cat Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated.tsv|sed 's/jgi|Exigl1|[0-9]*|//g' > Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated_shortgenes.tsv
-cat Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated.tsv|cut -f2 > Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated_names.tsv
+cat Results/2_quality/Exig/run_agaricomycetes_odb12/full_table.tsv \\
+|grep -v "#" \\
+|cut -f2,3,4,5,6,7 \\
+|grep "Duplicated"  \\
+> Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated.tsv
 
-awk 'NR==FNR{ids[$1]=1; next} /^>/{header=substr($1,2); keep=(header in ids)} keep' Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated_names.tsv Data/Exigl1/Exigl1_all_proteins_20130529.aa.fasta > Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated_buscos.aa.fasta
+cat Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated.tsv \\
+|sed 's/jgi|Exigl1|[0-9]*|//g' \\
+> Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated_shortgenes.tsv
+
+cat Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated.tsv \\
+|cut -f2 > Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated_names.tsv
+
+awk 'NR==FNR{ids[$1]=1; next} /^>/{header=substr($1,2); keep=(header in ids)} keep'  \\
+Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated_names.tsv  \\
+Data/Exigl1/Exigl1_all_proteins_20130529.aa.fasta  \\
+> Results/2_quality/Exig/run_agaricomycetes_odb12/exidia_duplicated_buscos.aa.fasta
 
 
-cat Results/2_quality/Auri/run_agaricomycetes_odb12/full_table.tsv|grep -v "#"|cut -f2,3,4,5,6,7|grep "Duplicated" > Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated.tsv
-cat Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated.tsv|sed 's/jgi|Aurde1|[0-9]*|//g' > Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated_shortgenes.tsv
-cat Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated.tsv|cut -f2 > Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated_names.tsv
+cat Results/2_quality/Auri/run_agaricomycetes_odb12/full_table.tsv \\
+|grep -v "#" \\
+|cut -f2,3,4,5,6,7 \\
+|grep "Duplicated"  \\
+> Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated.tsv
 
-awk 'NR==FNR{ids[$1]=1; next} /^>/{header=substr($1,2); keep=(header in ids)} keep' Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated_names.tsv Data/Aurde1/Aurde1_GeneCatalog_proteins_20110213.aa.fasta > Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated_buscos.aa.fasta
+cat Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated.tsv \\
+|sed 's/jgi|Aurde1|[0-9]* \\
+|//g' > Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated_shortgenes.tsv
+
+cat Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated.tsv \\
+|cut -f2  \\
+> Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated_names.tsv
+
+awk 'NR==FNR{ids[$1]=1; next} /^>/{header=substr($1,2); keep=(header in ids)} keep'  \\
+Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated_names.tsv  \\
+Data/Aurde1/Aurde1_GeneCatalog_proteins_20110213.aa.fasta  \\
+> Results/2_quality/Auri/run_agaricomycetes_odb12/auri_duplicated_buscos.aa.fasta
 
 
-cat Results/2_quality/Calco/run_basidiomycota_odb12/full_table.tsv|grep -v "#"|cut -f2,3,4,5,6,7|grep "Duplicated" > Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated.tsv
-cat Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated.tsv|sed 's/jgi|Calco1
-|[0-9]*|//g' > Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated_shortgenes.tsv
-cat Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated.tsv|cut -f2 > Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated_names.tsv
+cat Results/2_quality/Calco/run_basidiomycota_odb12/full_table.tsv \\
+|grep -v "#" \\
+|cut -f2,3,4,5,6,7 \\
+|grep "Duplicated" >  \\
+Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated.tsv
 
-awk 'NR==FNR{ids[$1]=1; next} /^>/{header=substr($1,2); keep=(header in ids)} keep' Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated_names.tsv Data/Calco1/Calco1_GeneCatalog_proteins_20130417.aa.fasta > Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated_buscos.aa.fasta
+cat Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated.tsv \\
+|sed 's/jgi|Calco1
+|[0-9]*|//g'  \\
+> Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated_shortgenes.tsv
+
+cat Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated.tsv \\
+|cut -f2 \\
+> Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated_names.tsv
+
+awk 'NR==FNR{ids[$1]=1; next} /^>/{header=substr($1,2); keep=(header in ids)} keep' \\
+Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated_names.tsv \\
+Data/Calco1/Calco1_GeneCatalog_proteins_20130417.aa.fasta \\
+> Results/2_quality/Calco/run_basidiomycota_odb12/calco_duplicated_buscos.aa.fasta
 
 ````
