@@ -1,0 +1,13 @@
+name: wgd_env
+# wgd v2.0.38 was used and internally uses:
+# mafft 7.525, FastTree 2.2.0, mcl 22-282, diamond 2.0.6 and i-ADHoRe 3.0
+# all of which have to be pre-installed
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python>=3.9
+  - pip
+  - pip:
+      - wgd==2.0.38

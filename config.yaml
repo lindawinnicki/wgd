@@ -1,0 +1,83 @@
+# wgd pipeline — config.yaml
+# ---------------------
+
+# path to the sample sheet
+samples: "samples.tsv"
+
+# output root directory
+outdir: "Results"
+
+# species tree in Newick format 
+# node order must match the samples in samples.tsv
+species_tree: "Data/speciestree.nw"
+
+# ---------------------
+# threads
+# ---------------------
+threads:
+  busco: 10
+  stats: 4
+  dmd: 10
+  ksd: 10
+  syn: 10
+  viz: 10
+  inter: 10
+
+# ---------------------
+# wgd dmd
+# ---------------------
+dmd: {}  # no extra flags beyond -n
+
+# ---------------------
+# wgd ksd
+# ---------------------
+ksd:
+  pairwise: true   # also run the --pairwise variant
+
+# ---------------------
+# wgd syn (intraspecific)
+# ---------------------
+syn:
+  mingenenum: 10
+  dotsize: 5 # bigger dotsize for plot
+  apalpha: 1 #  anchor pair opacity
+  hoalpha: 0 # set as 0 for the visualisation without homologs, i.e. only with anchor paits
+
+# ---------------------
+# wgd syn (interspecific)
+# ---------------------
+inter_syn:
+  mingenenum: 10
+  dotsize: 5
+
+# ---------------------
+# wgd viz (interspecific reweight)
+# ---------------------
+viz:
+  focal_sample: "Exig"   # the focal species passed to -fa
+  plotelmm: true
+  plotapgmm: true
+  reweight: true
+
+# ---------------------
+# sed regex to strip JGI-style headers
+# leave empty "" if no cleaning is needed for a sample
+# note ! sample keys here must match names in samples.tsv
+# ---------------------
+clean_headers:
+  Auri: "s/jgi|Aurde1|[0-9]*|//g"
+  Exig: "s/jgi|Exigl1|[0-9]*|//g"
+  Calco: "s/jgi|Calco1|[0-9]*|//g"
+
+# prefix used when building interspecific CDS (to avoid gene-name collisions)
+# note ! sample keys here must match names in samples.tsv
+inter_prefix:
+  Auri: "SP1_"
+  Exig: "SP2_"
+  Calco: "" # outgroup — no prefix needed unless names clash
+
+# ---------------------
+# BUSCO
+# ---------------------
+busco:
+  mode: "prot" # protein mode
