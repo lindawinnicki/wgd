@@ -29,7 +29,7 @@ Raw genome data (CDS, protein, and GFF files) **are not included in this reposit
 Place them under `Data/<sample>/` following the structure in samples.tsv before running the pipeline.
 
 # Requirements
-- Conda or Mamba
+- `Conda` or `Mamba`
 - `Snakemake` v9.21.1
 
 # Setup
@@ -39,13 +39,14 @@ cd wgd
 ````
 
 # Running the pipeline
+In terminal, run:
 ````bash
 snakemake --configfile config.yaml --use-conda -j <cores>
 ````
 Set `-j` to the number of CPU cores available on your machine (check with `nproc`). Individual rule thread requests are set in `config.yaml` under `threads:`.
 
 ## Sample sheet
-`samples.tsv` should contain the following columns: `sample`, `role`, `cds_fasta`, `aa_fasta`, `genome_fasta`, `gff`, `busco_lineage`, `gff_id_attr` and `gff_feature_type`
+`samples.tsv` should contain the following columns: `sample`, `role`, `cds_fasta`, `aa_fasta`, `genome_fasta`, `gff`, `busco_lineage`, `gff_id_attr` and `gff_feature_type`.
 
 # Configuration
 All settings are found in "config.yaml", so edit it before running a new sample.
@@ -98,7 +99,6 @@ All settings are found in "config.yaml", so edit it before running a new sample.
 ````
 
 # Citation
-
 This pipeline relies heavily on wgd v2. If you use this pipeline or its outputs, please also cite:
 
 > Chen H, Zwaenepoel A, Van de Peer Y. wgd v2: a suite of tools to uncover and date ancient polyploidy and whole-genome duplication. Bioinformatics. 2024;40(5):btae272. https://doi.org/10.1093/bioinformatics/btae272
