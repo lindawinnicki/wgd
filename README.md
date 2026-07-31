@@ -9,14 +9,15 @@ This pipeline was created as part of a bioinformatics project course. Its primar
 This pipeline utilises the suite of tools `wgd v2` (GitHub: "https://github.com/heche-psb/wgd/tree/phylodating"). Most of the pipeline utilises default parameters, except for an adjusted collinearity threshold of 10 genes instead of 30, to better fit the high plasticity of fungal genomes. 
 
 ## Tools and Versions
-- wgd v2.0.38
-- mafft v7.525 (2024/Mar/13)
-- FastTree 2.2.0
-- mcl 22-282
-- diamond version 2.0.6
-- i-ADHoRe version 3.0 19 November 2007
-- BUSCO 6.0.0
-- BBtools 39.81 (3 March 2020)
+- `wgd` v2.0.38
+- `MAFFT` v7.525 (2024/Mar/13)
+- `FastTree` v2.2.0
+- `mcl`v22-282
+- `DIAMOND` v2.0.6
+- `i-ADHoRe` v3.0 19 November 2007
+- `BUSCO` 6.0.0
+- `BBtools` 39.81 (3 March 2020)
+- `Snakemake` v9.21.1
 
 ## Data Availability
 Raw genome data (CDS, protein, and GFF files) **are not included in this repository** due to file size. They were obtained from JGI (March 2026) and can be downloaded from https://mycocosm.jgi.doe.gov/mycocosm/home (account required):
@@ -29,7 +30,7 @@ Place them under `Data/<sample>/` following the structure in samples.tsv before 
 
 # Requirements
 - Conda or Mamba
-- Snakemake v9.21.1
+- `Snakemake` v9.21.1
 
 # Setup
 ````bash 
